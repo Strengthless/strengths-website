@@ -14,7 +14,6 @@ window.quotes = [
     "I love you the more in that I believe you had liked me for my own sake and for nothing else. \u2014 John Keats",
     "However difficult life may seem, there is always something you can do, and succeed at \u2014 Stephen Hawking",
     "You can't blame gravity for falling in love. \u2014 Albert Einstein",
-    "Cherry Yeung... \uD83D\uDC94",
     "Cherry Yeung... \uD83D\uDC94"
 ];
 
