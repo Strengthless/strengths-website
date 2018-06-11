@@ -66,7 +66,7 @@ window.bookmarks = [
 ];
 
 window.getWeather = function() {
-    $.getJSON("https://api.wunderground.com/api/a75da485666047dd/conditions/q/HK/HongKong.json", function(data) {
+    $.getJSON("https://api.wunderground.com/api/a75da485666047dd/conditions_v11/q/HK/HongKong.json", function(data) {
         let temp = data.current_observation.temp_c,
             city = data.current_observation.observation_location.city, 
             condition = data.current_observation.weather;
