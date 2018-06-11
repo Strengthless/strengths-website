@@ -85,14 +85,14 @@
             if(stream[0].paused) {
                 stream[0].play();
 
-                imgs.fadeOut(600, () => {
+                imgs.fadeOut(300, () => {
                     imgs.attr("src", "https://jordqn.me/tabloid/assets/icons/pause.svg");
                 }).fadeIn();
 
                 return stream.animate({volume: 1}, 2500, 'swing');
             }
 
-            imgs.fadeOut(600, () => {
+            imgs.fadeOut(300, () => {
                 imgs.attr("src", "https://jordqn.me/tabloid/assets/icons/play.svg");
             }).fadeIn();
 
