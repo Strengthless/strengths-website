@@ -73,7 +73,7 @@ window.getWeather = function() {
  
         $("#weather #details").text(`${temp}\u00B0 in ${city}`); 
         $("#weather #condition").text(condition); 
-        $("#weather #icon").attr("src", `https://github.com/manifestinteractive/weather-underground-icons/tree/master/dist/icons/white/png/128x128/${data.current_observation.icon}.png?raw=true`); 
+        $("#weather #icon").attr("src", `https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/tree/master/dist/icons/white/png/128x128/${data.current_observation.icon}.png?raw=true`); 
  
         return false;
     }).fail(() => console.log("L kiddo"));;
