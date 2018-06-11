@@ -2,9 +2,9 @@ window.theme = "dark";
 
 window.dayTimes = {
     morning: "Good Morning",
-    day: "Good Day",
     afternoon: "Good Afternoon",
     evening: "Good Evening",
+    night: "Good Night",
     generic: "Hello"
 };
 
