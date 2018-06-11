@@ -55,13 +55,13 @@ function loop() {
     $("#clock #time").text(moment().format("h:mm A"));
     $("#clock #date").text(moment().format("dddd, Do MMMM YYYY"));
 
-    if (hour >= 18 && hour <= 23) {
+    if (hour >= 17 && hour <= 18) {
         $("#daygreet").text(dayTimes.evening);
-    } else if (hour >= 0 && hour <= 9) {
+    } else if (hour >= 5 && hour <= 11) {
         $("#daygreet").text(dayTimes.morning);
-    } else if (hour >= 10 && hour <= 14) {
-        $("#daygreet").text(dayTimes.day);
-    } else if (hour >= 15 && hour <= 17) {
+    } else if (hour >= 19 && hour <= 4) {
+        $("#daygreet").text(dayTimes.night);
+    } else if (hour >= 12 && hour <= 16) {
         $("#daygreet").text(dayTimes.afternoon);
     } else {
         $("#daygreet").text(dayTimes.generic);
