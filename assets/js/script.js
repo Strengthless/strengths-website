@@ -59,7 +59,7 @@ function loop() {
         $("#daygreet").text(dayTimes.evening);
     } else if (hour >= 5 && hour <= 11) {
         $("#daygreet").text(dayTimes.morning);
-    } else if (hour >= 19 && hour <= 4) {
+    } else if (hour >= 19 && hour <= 23 || hour >= 0 && hour <= 4) {
         $("#daygreet").text(dayTimes.night);
     } else if (hour >= 12 && hour <= 16) {
         $("#daygreet").text(dayTimes.afternoon);
