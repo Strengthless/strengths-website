@@ -79,7 +79,7 @@
     <script>
         const stream = $("#stream");
         const imgs = $(".mobile-status img, .pc-status img");
-        stream.attr("src", "https://comet.shoutca.st:8658/;?nocache=" + (Math.floor(Math.random() * 100000)));
+        stream.attr("src", "http://comet.shoutca.st:8658/;?nocache=" + (Math.floor(Math.random() * 100000)));
 
         $(".mobile-status, .pc-status img").click(() => {
             if(stream[0].paused) {
