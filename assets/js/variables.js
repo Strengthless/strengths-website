@@ -11,10 +11,8 @@ window.dayTimes = {
 window.quotes = [
     "You can't win if you don't participate.",
     "Try something today that you didn't do yesterday.",
-    "I love you the more in that I believe you had liked me for my own sake and for nothing else. \u2014 John Keats",
     "However difficult life may seem, there is always something you can do, and succeed at \u2014 Stephen Hawking",
-    "You can't blame gravity for falling in love. \u2014 Albert Einstein",
-    "Cherry Yeung... \uD83D\uDC94"
+    "Cherry Yeung? Honestly fuck you."
 ];
 
 window.bookmarks = [
