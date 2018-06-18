@@ -11,7 +11,7 @@ window.dayTimes = {
 window.quotes = [
     "You can't win if you don't participate.",
     "Try something today that you didn't do yesterday.",
-    "However difficult life may seem, there is always something you can do, and succeed at u2014 Stephen Hawking"
+    "However difficult life may seem, there is always something you can do, and succeed at \u2014 Stephen Hawking"
 ];
 
 window.bookmarks = [
@@ -68,7 +68,7 @@ window.getWeather = function() {
             city = data.current_observation.display_location.city, 
             condition = data.current_observation.weather;
  
-        $("#weather #details").text(`${temp}u00B0 in ${city}`); 
+        $("#weather #details").text(`${temp}\u00B0 in ${city}`); 
         $("#weather #condition").text(condition); 
         $("#weather #icon").attr("src", `https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/master/dist/icons/white/png/128x128/${data.current_observation.icon}.png`); 
  
