@@ -63,7 +63,7 @@ window.bookmarks = [
 ];
 
 window.getWeather = function() {
-    setTimeout(getWeather, 10000);
+    setTimeout(getWeather, 60000);
     $.getJSON("https://api.wunderground.com/api/a75da485666047dd/conditions_v11/q/HK/HongKong.json", function(data) {
         let temp = data.current_observation.temp_c,
             city = data.current_observation.display_location.city, 
