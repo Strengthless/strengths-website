@@ -31,7 +31,7 @@ ul, li {
     left: 0;
     transform: scale(1.1);
     z-index: -1;
-    background: url("../images/bg_dark.jpg") no-repeat center center fixed;
+    background: url("https://images.unsplash.com/photo-1501807814154-302db029acbd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7656bca60983da87e06d4be6f7f421e2&auto=format&fit=crop&w=2001&q=80") no-repeat center center fixed;
     background-size: cover;
     filter: blur(2px);
 }
