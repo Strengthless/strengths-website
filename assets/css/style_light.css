@@ -33,7 +33,7 @@ ul, li {
     z-index: -1;
     background: url("../images/bg_light.jpg") no-repeat center center fixed;
     background-size: cover;
-    filter: blur(3px);
+    filter: blur(2px);
 }
 
 .container {
