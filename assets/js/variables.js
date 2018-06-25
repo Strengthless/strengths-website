@@ -64,7 +64,7 @@ window.bookmarks = [
 
 window.getWeather = function() {
     setTimeout(getWeather, 60000);
-    $.getJSON("https://api.wunderground.com/api/a75da485666047dd/conditions_v11/q/HK/HongKong.json", function(data) {
+    $.getJSON("https://api.wunderground.com/api/a75da485666047dd/conditions_v11/q/22.4545139,114.1710819.json", function(data) {
         let temp = data.current_observation.temp_c,
             city = data.current_observation.display_location.city, 
             condition = data.current_observation.weather;
@@ -74,6 +74,6 @@ window.getWeather = function() {
         $("#weather #icon").attr("src", `https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/master/dist/icons/white/png/128x128/${data.current_observation.icon}.png`); 
  
         return false;
-    }).fail(() => console.log("L kiddo"));;
+    }).fail(() => console.log("An error has occurred while trying to import the weather data. Please contact Strengthless about the issue."));;
 
 };
