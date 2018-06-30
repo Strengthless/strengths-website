@@ -11,9 +11,7 @@ contact me via discord or twitter, which my accounts are "Strengthlesss"
 and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b>
-<br>
-<br>
-<b>v2.43</b><br>
+<b>v2.43</b>
 - Improved the algorithm for choosing weather stations, now uses the weather information of the nearest available station (likely Tai Po) instead of HK official station (Chep Lap Kok).
 
 <b>v2.42</b>
