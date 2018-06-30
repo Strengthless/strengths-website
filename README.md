@@ -19,11 +19,36 @@ and "Strengthless#8282" respectively.</p>
 - Added a script for automatic weather info update. (The script executes once per minute, but the weather API updates once per 5 or 10 minutes depending on the situation)
 
 <b>v2.41</b>
-- Modified the weather icons, looks cleaner and more modern.
+- Modified the weather icons, now looks cleaner and more modern.
 
 <b>v2.4</b>
 - Improved the Weather API, now consistently shows current HK weather.
 
-<b></b>
+<b>v2.31</b>
+- Fixed issues upon Google links redirecting.
 
+<b>v2.3</b>
+- Removed the custom-built searching feature.
+- Added Google redirection in searching bar.
 
+<b>v2.2</b>
+- Modified the greeting messages, now more accurate.
+- Added 3 more new quotes.
+- Modified the background image, dark-styled.
+
+<b>v2.1</b>
+- Added current song name for music stream.
+- Modified the apps content.
+
+<b>v2.0</b>
+- Rewritten the whole HTML, the code is now cleaner, and with better indentations.
+
+<b>v1.0</b>
+- Initialized the website.
+- Added greeting messages.
+- Added quotes.
+- Added searching bar.
+- Added current time.
+- Added weather API support.
+- Added apps.
+- Added music stream.
