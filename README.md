@@ -10,9 +10,10 @@ is also where I debug/ test my coding's.
 contact me via discord or twitter, which my accounts are "Strengthlesss"
 and "Strengthless#8282" respectively.</p>
 <hr>
-<b>Changelogs:</b>
+<b>Changelogs:</b><br><br>
+
 <b>v2.43</b>
-- Improved the algorithm for choosing weather stations, now uses the weather information of the nearest available station (likely Tai Po) instead of HK official station (Chep Lap Kok).<br><br>
+- Improved the algorithm for choosing weather stations, now uses the weather information of the nearest available station (likely Tai Po) instead of HK official station (Chep Lap Kok).
 
 <b>v2.42</b>
 - Added a script for automatic weather info update. (The script executes once per minute, but the weather API updates once per 5 or 10 minutes depending on the situation)
