@@ -12,7 +12,7 @@ and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b>
 <b>v2.43</b>
-- Improved the algorithm for choosing weather stations, now uses the weather information of the nearest available station (likely Tai Po) instead of HK official station (Chep Lap Kok).
+- Improved the algorithm for choosing weather stations, now uses the weather information of the nearest available station (likely Tai Po) instead of HK official station (Chep Lap Kok).<br><br>
 
 <b>v2.42</b>
 - Added a script for automatic weather info update. (The script executes once per minute, but the weather API updates once per 5 or 10 minutes depending on the situation)
