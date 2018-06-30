@@ -1,4 +1,5 @@
-<h2>Project eClipse v2</h2> This is an HTML project which I made it for fun.
+<h2>Project eClipse v2</h2> 
+This is an HTML project which I made for the customization of my browser home page.
 <br>
 <br>
 <b>About me:</b>
@@ -12,7 +13,7 @@ and "Strengthless#8282" respectively.</p>
 <b>Changelogs:</b>
 <br>
 <br>
-<b>v2.43</b>
+<b>v2.43</b><br>
 - Improved the algorithm for choosing weather stations, now uses the weather information of the nearest available station (likely Tai Po) instead of HK official station (Chep Lap Kok).
 
 <b>v2.42</b>
