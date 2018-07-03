@@ -81,6 +81,7 @@
         const imgs = $(".mobile-status img, .pc-status img");
         stream.attr("src", "http://comet.shoutca.st:8658/;?nocache=" + (Math.floor(Math.random() * 100000)));
 
+        /* [Temporarily removed due to the downtime of the music stream]
         $(".mobile-status, .pc-status img").click(() => {
             if(stream[0].paused) {
                 stream[0].play();
@@ -100,6 +101,7 @@
                 stream[0].pause();
             });
         });
+        */
     </script>
 </body>
 </html> 
