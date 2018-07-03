@@ -35,7 +35,6 @@ function toggleBookmarks() {
 }
 
 function updateData() {
-    setTimeout(updateData, 5000);
     $.getJSON("https://comet.shoutca.st/recentfeed/mushtunes/json/?nocache="+ (Math.floor(Math.random() * 1000)), (json) => {
       obj = json;
       if(obj !== objcache) {
