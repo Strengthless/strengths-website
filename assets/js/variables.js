@@ -11,8 +11,7 @@ window.dayTimes = {
 window.quotes = [
     "You can't win if you don't participate.",
     "Try something today that you didn't do yesterday.",
-    "Let's make today a good day!",
-    "Let's do our best today!",
+    "I &#10084; Heidi!",
     "However difficult life may seem, there is always something you can do, and succeed at \u2014 Stephen Hawking",
     "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away \u2014 A. de Saint-Exupery",
     "As for the future, your task is not to foresee it, but to enable it \u2014 A. de Saint-Exupery",
