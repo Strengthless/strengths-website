@@ -67,9 +67,9 @@ window.bookmarks = [
 
 window.getWeather = function() {
     setTimeout(getWeather, 30000);
-    $.getJSON("https://api.wunderground.com/api/a75da485666047dd/conditions_v11/q/NL/The_Hague.json", function(data) {
+    $.getJSON("https://api.wunderground.com/api/a75da485666047dd/conditions_v11/q/22.4545139,114.1710819.json", function(data) {
         let temp = data.current_observation.temp_c,
-            city = data.current_observation.display_location.city, 
+            city = data.current_observation.display_location.state_name, 
             condition = data.current_observation.weather;
  
         $("#weather #details").text(`${temp}\u00B0 in ${city}`); 
