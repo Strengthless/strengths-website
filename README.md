@@ -12,6 +12,9 @@ and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b><br><br>
 
+<b>2.51</b>
+- Sync the music stream across all site users.
+
 <b>v2.5</b>
 - Revamped the music system, now uses YT music instead of shoutcast radio, due to the shutdown of Jokinami radio.
 - Due to the limitation of YT song names, the music recent feed has been changed to "Music stream" text.
