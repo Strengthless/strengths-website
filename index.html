@@ -95,7 +95,7 @@ function onYouTubeIframeAPIReady() {
         t.setAttribute("src", "assets/icons/" + a)
     };
     e.onclick = function() {
-        r.getPlayerState() === YT.PlayerState.PLAYING || r.getPlayerState() === YT.PlayerState.BUFFERING ? (r.pauseVideo(), o(!1)) : (r.playVideo(), o(!0))
+        r.getPlayerState() === YT.PlayerState.PLAYING || r.getPlayerState() === YT.PlayerState.BUFFERING ? (r.stopVideo(), o(!1)) : (r.playVideo(), o(!0))
     };
     var r = new YT.Player("youtube-player", {
         height: "0",
