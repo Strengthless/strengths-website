@@ -11,9 +11,8 @@ window.dayTimes = {
 window.quotes = [
     "You can't win if you don't participate.",
     "Try something today that you didn't do yesterday.",
-    "However difficult life may seem, there is always something you can do, and succeed at \u2014 Stephen Hawking",
+    "However difficult life may seem, there is always something you can do, and succeed at  \u2014 Stephen Hawking",
     "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away \u2014 A. de Saint-Exupery",
-    "As for the future, your task is not to foresee it, but to enable it \u2014 A. de Saint-Exupery",
 ];
 
 window.bookmarks = [
@@ -71,7 +70,7 @@ window.getWeather = function() {
             city = data.current_observation.display_location.state_name, 
             condition = data.current_observation.weather;
  
-        $("#weather #details").text(`${temp}\u00B0 in ${city}`); 
+        $("#weather #details").text(`${temp}\u00B0 in Tai Po`); 
         $("#weather #condition").text(condition); 
         $("#weather #icon").attr("src", `https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/master/dist/icons/white/png/128x128/${data.current_observation.icon}.png`); 
  
