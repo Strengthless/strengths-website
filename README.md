@@ -5,15 +5,15 @@ This is an HTML project which I made for the customization of my browser home pa
 <b>About me:</b>
 <br>
    Hello! Welcome to my github page, this is where I work on my projects. This
-is also where I debug/ test my coding's.
-   <p>I'm a Hong Kong student that specializes in JavaScript/ CSS/ HTML. You may
+is also where I debug, or test my codes.
+   <p>I'm a Hong Kong student that specializes in JavaScript, CSS and HTML. You may
 contact me via twitter or discord, which my accounts are "Strengthlesss"
 and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b><br><br>
 
 <b>2.51</b>
-- Sync the music stream across all site users.
+- The music stream now sync across all site users.
 
 <b>v2.5</b>
 - Revamped the music system, now uses YT music instead of shoutcast radio, due to the shutdown of Jokinami radio.
@@ -22,7 +22,6 @@ and "Strengthless#8282" respectively.</p>
 - Modified the weather display info, from "Hong Kong" to "Tai Po".
 - Removed 1 quote message from variables.
 - Removed "p0lbot.sys" file and the "lhw" folder.
-
 
 <b>v2.44</b>
 - Removed the music recent feed automatic update feature.
