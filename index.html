@@ -54,14 +54,20 @@
         </div>
 
         <div class="mobile-status">
-            <img src="./assets/icons/play.svg" id="music-stream">
+            <div data-video="bullshit"  
+            data-autoplay="0"         
+            data-loop="1"             
+            class="music-stream"
+            id="mobile-music">
+            </div>
         </div>
 
         <div class="pc-status">
-            <div data-video="7r7UH-muKZI"  
+            <div data-video="bullshit" 
             data-autoplay="0"         
             data-loop="1"             
-            id="youtube-audio">
+            class="music-stream"
+            id="pc-music">
         </div>
             <p id="songname">Music stream</p>
         </div>
@@ -84,36 +90,70 @@
     <script src="https://www.youtube.com/iframe_api"></script>
 
     <script>
+        function getStreamId() {
+            $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC_jxnWLGJ2eQK4en3UblKEw&eventType=live&type=video&key=AIzaSyBe4z8HJEjrEgzERxSAjjh1au470kDb1D8", function(data) {
+        let streamId = data["items"][0]["id"]["videoId"];
+        console.log(streamId);
+        document.getElementById('mobile-music').setAttribute('data-video', streamId);
+        document.getElementById('pc-music').setAttribute('data-video', streamId);
+       }
+        )
+    }
+        getStreamId();
+        
 function onYouTubeIframeAPIReady() {
-    var e = document.getElementById("youtube-audio"),
-        t = document.createElement("img");
-        e.appendChild(t);
-    var a = document.createElement("div");
-    a.setAttribute("id", "youtube-player"), document.getElementById("audio-track").appendChild(a);
-    var o = function(e) {
+    var o = function(e, t) {
         var a = e ? "pause.svg" : "play.svg";
+
         t.setAttribute("src", "assets/icons/" + a)
     };
-    e.onclick = function() {
-        r.getPlayerState() === YT.PlayerState.PLAYING || r.getPlayerState() === YT.PlayerState.BUFFERING ? (r.stopVideo(), o(!1)) : (r.playVideo(), o(!0))
-    };
-    var r = new YT.Player("youtube-player", {
-        height: "0",
-        width: "0",
-        videoId: e.dataset.video,
-        playerVars: {
-            autoplay: e.dataset.autoplay,
-            loop: e.dataset.loop
-        },
-        events: {
-            onReady: function(e) {
-                r.setPlaybackQuality("small"), o(r.getPlayerState() !== YT.PlayerState.CUED)
+    
+
+    var counter = 0;
+    var bigE = document.querySelectorAll(".music-stream");
+
+    bigE.forEach(function(e) {
+        var t = document.createElement("img");
+
+        t.setAttribute("id", "youtube-icon-" + counter),
+            t.style.cssText = "cursor:pointer;cursor:hand",
+            e.appendChild(t);
+
+        var a = document.createElement("div");
+
+        a.setAttribute("id", "youtube-player-" + counter),
+            document.getElementById("audio-track").appendChild(a);
+
+        t.setAttribute("src", "assets/icons/play.svg");
+
+        e.onclick = function() {
+            r.getPlayerState() === YT.PlayerState.PLAYING || r.getPlayerState() === YT.PlayerState.BUFFERING ? (r.stopVideo(),
+                o(!1, t)) : (r.playVideo(),
+                o(!0, t))
+        };
+
+        var r = new YT.Player("youtube-player-" + counter, {
+
+            height: "0",
+            width: "0",
+            videoId: e.dataset.video,
+            playerVars: {
+                autoplay: e.dataset.autoplay,
+                loop: e.dataset.loop
             },
-            onStateChange: function(e) {
-                e.data === YT.PlayerState.ENDED && o(!1)
+            events: {
+                onReady: function(e) {
+                    r.setPlaybackQuality("small"),
+                        o(r.getPlayerState() !== YT.PlayerState.CUED, t)
+                },
+                onStateChange: function(e) {
+                    e.data === YT.PlayerState.ENDED && o(!1, t)
+                }
             }
-        }
-    })
+        })
+
+        counter++;
+    });
 }
     </script>
 </body>
