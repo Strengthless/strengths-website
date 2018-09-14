@@ -6,22 +6,31 @@ This is an HTML project which I made for the customization of my browser home pa
 <br>
    Hello! Welcome to my github page, this is where I work on my projects. This
 is also where I debug/ test my coding's.
-   <p>I'm a Hong Kong student that specializes in JavaScript/ Java/ HTML. You may
-contact me via discord or twitter, which my accounts are "Strengthlesss"
+   <p>I'm a Hong Kong student that specializes in JavaScript/ CSS/ HTML. You may
+contact me via twitter or discord, which my accounts are "Strengthlesss"
 and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b><br><br>
 
+<b>v2.5</b>
+- Revamped the music system, now uses YT music instead of shoutcast radio, due to the shutdown of Jokinami radio.
+- Due to the limitation of YT song names, the music recent feed has been changed to "Music stream" text.
+- Removed the fade transition effect of the play button due to display issues.
+- Modified the weather display info, from "Hong Kong" to "Tai Po".
+- Removed 1 quote message from variables.
+- Removed "p0lbot.sys" file and the "lhw" folder.
+
+
 <b>v2.44</b>
-- Removed the music recent feed automatic update feature temporarily.
-- Removed the music stream toggling button temporarily.
-- Modified the music recent feed message temporarily. (From "Loading" to "Temporarily disabled")
+- Removed the music recent feed automatic update feature.
+- Removed the music stream toggling button.
+- Modified the music recent feed message. (From "Loading" to "Disabled")
 
 <b>v2.43</b>
 - Improved the algorithm for choosing weather stations, now uses the weather information of the nearest available station (likely Tai Po) instead of HK official station (Chep Lap Kok).
 
 <b>v2.42</b>
-- Added a script for automatic weather info update. (The script executes once per minute, but the weather API updates once per 5 or 10 minutes depending on the situation)
+- Added a script for automatic weather info update. (The script executes once per minute, but the weather API updates once per 5 or 10 minutes depending on the weather)
 
 <b>v2.41</b>
 - Modified the weather icons, now looks cleaner and more modern.

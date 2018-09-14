@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   
     <link rel="icon" type="image/png" href="./assets/images/favicon.png">
-    <audio id="stream"></audio>
 
     <!-- Design -->
     <link href="./assets/css/style_dark.css" rel="stylesheet">    
+
+    <!-- Audio -->
+    <div id="audio-track"></div>
 </head>
 
 <body>
@@ -52,12 +54,16 @@
         </div>
 
         <div class="mobile-status">
-            <img src="./assets/icons/play.svg">
+            <img src="./assets/icons/play.svg" id="music-stream">
         </div>
 
         <div class="pc-status">
-            <img src="./assets/icons/play.svg">
-            <p id="songname">Temporarily disabled...</p>
+            <div data-video="7r7UH-muKZI"  
+            data-autoplay="0"         
+            data-loop="1"             
+            id="youtube-audio">
+        </div>
+            <p id="songname">Music stream</p>
         </div>
     </div>
 
@@ -75,33 +81,40 @@
     <script src="./assets/js/moment.min.js"></script>
     <script src="./assets/js/variables.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
 
     <script>
-        const stream = $("#stream");
-        const imgs = $(".mobile-status img, .pc-status img");
-        stream.attr("src", "http://comet.shoutca.st:8658/;?nocache=" + (Math.floor(Math.random() * 100000)));
-
-        /* [Temporarily removed due to the downtime of the music stream]
-        $(".mobile-status, .pc-status img").click(() => {
-            if(stream[0].paused) {
-                stream[0].play();
-
-                imgs.fadeOut(600, () => {
-                    imgs.attr("src", "https://jordqn.me/tabloid/assets/icons/pause.svg");
-                }).fadeIn();
-
-                return stream.animate({volume: 1}, 2500, 'swing');
+function onYouTubeIframeAPIReady() {
+    var e = document.getElementById("youtube-audio"),
+        t = document.createElement("img");
+        e.appendChild(t);
+    var a = document.createElement("div");
+    a.setAttribute("id", "youtube-player"), document.getElementById("audio-track").appendChild(a);
+    var o = function(e) {
+        var a = e ? "pause.svg" : "play.svg";
+        t.setAttribute("src", "assets/icons/" + a)
+    };
+    e.onclick = function() {
+        r.getPlayerState() === YT.PlayerState.PLAYING || r.getPlayerState() === YT.PlayerState.BUFFERING ? (r.pauseVideo(), o(!1)) : (r.playVideo(), o(!0))
+    };
+    var r = new YT.Player("youtube-player", {
+        height: "0",
+        width: "0",
+        videoId: e.dataset.video,
+        playerVars: {
+            autoplay: e.dataset.autoplay,
+            loop: e.dataset.loop
+        },
+        events: {
+            onReady: function(e) {
+                r.setPlaybackQuality("small"), o(r.getPlayerState() !== YT.PlayerState.CUED)
+            },
+            onStateChange: function(e) {
+                e.data === YT.PlayerState.ENDED && o(!1)
             }
-
-            imgs.fadeOut(600, () => {
-                imgs.attr("src", "https://jordqn.me/tabloid/assets/icons/play.svg");
-            }).fadeIn();
-
-            stream.animate({volume: 0}, 2500, 'swing', () => {
-                stream[0].pause();
-            });
-        });
-        */
+        }
+    })
+}
     </script>
 </body>
 </html> 
