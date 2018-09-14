@@ -14,7 +14,7 @@ and "Strengthless#8282" respectively.</p>
 
 <b>v2.52</b>
 - Fixed the issue of music not working on mobile.
-- Improved mobile version compatibility and stability.
+- Improved mobile version compatibility and stability with new CSS codes.
 - Added a new algorithm for music stream, which detects and re-connects to the new music link when the original link is down. 
 - Improved website overall performance by purging unnecessary old codes.
 
