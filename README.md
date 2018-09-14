@@ -12,7 +12,13 @@ and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b><br><br>
 
-<b>2.51</b>
+<b>v2.52</b>
+- Fixed the issue of music not working on mobile.
+- Improved mobile version compatibility and stability.
+- Added an algorithm for music stream, which detects and re-connects to the new music link when the original link is down. 
+- Improved website overall performance by purging unnecessary old codes.
+
+<b>v2.51</b>
 - The music stream now sync across all site users.
 
 <b>v2.5</b>
