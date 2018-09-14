@@ -35,19 +35,7 @@ function toggleBookmarks() {
 }
 
 function updateData() {
-//    setTimeout(updateData, 5000); 
-//    ^^ [Currently removed due to the music stream downtime]
-    $.getJSON("https://comet.shoutca.st/recentfeed/mushtunes/json/?nocache="+ (Math.floor(Math.random() * 1000)), (json) => {
-      obj = json;
-      if(obj !== objcache) {
-        if((parseFloat(Math.floor(Date.now() / 1000)) - parseFloat(obj.items[0].date) - 15) < 0) {
-          $("#songname").text(obj.items[1].title);
-        } else {
-          $("#songname").text(obj.items[0].title);
-        }
-        objcache = obj;
-      }
-    });
+
   }
   
 
