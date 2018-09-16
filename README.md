@@ -69,7 +69,7 @@ and "Strengthless#8282" respectively.</p>
 - Added current song name for music stream.
 - Modified the apps content.
 
-<b>v2.0<b>
+<b>v2.0</b>
 - Rewritten the whole HTML, the code is now cleaner, and with better indentations.
 
 <b>v1.0</b>
