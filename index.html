@@ -100,7 +100,12 @@
         )
     }
         getStreamId();
-        
+    </script>
+    <script>
+function streamLoaded() {
+    $("#songname").text(`Music Stream`);
+}
+
 function onYouTubeIframeAPIReady() {
     var o = function(e, t) {
         var a = e ? "pause.svg" : "play.svg";
@@ -123,7 +128,6 @@ function onYouTubeIframeAPIReady() {
 
         a.setAttribute("id", "youtube-player-" + counter),
             document.getElementById("audio-track").appendChild(a);
-            $("#songname").text(`Music Stream`);
 
         t.setAttribute("src", "assets/icons/play.svg");
 
@@ -152,7 +156,7 @@ function onYouTubeIframeAPIReady() {
                 }
             }
         })
-
+        setTimeout(streamLoaded, 5000);
         counter++;
     });
 }
