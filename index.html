@@ -78,7 +78,7 @@
          function getStreamId() {
              $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC_jxnWLGJ2eQK4en3UblKEw&eventType=live&type=video&key=AIzaSyBe4z8HJEjrEgzERxSAjjh1au470kDb1D8", function(data) {
          let streamId = data["items"][0]["id"]["videoId"];
-         console.log(streamId);
+         // console.log(streamId);
          document.getElementById('mobile-music').setAttribute('data-video', streamId);
          document.getElementById('pc-music').setAttribute('data-video', streamId);
          }
