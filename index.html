@@ -69,7 +69,7 @@
             class="music-stream"
             id="pc-music">
         </div>
-            <p id="songname">Music stream</p>
+            <p id="songname">Loading...</p>
         </div>
     </div>
 
@@ -96,6 +96,7 @@
         console.log(streamId);
         document.getElementById('mobile-music').setAttribute('data-video', streamId);
         document.getElementById('pc-music').setAttribute('data-video', streamId);
+        $("#songname").text(`Music Stream`);
        }
         )
     }
