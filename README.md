@@ -12,6 +12,9 @@ and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b><br><br>
 
+<b>v2.62</b>
+- Cleaned up the indentation of the website code.
+
 <b>v2.61</b>
 - Fixed the improper bold text in README.md file.
 - The music stream text, now shows as "Loading..." until the music stream is fully loaded, then will display as "Music Stream".
