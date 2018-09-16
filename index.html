@@ -96,7 +96,6 @@
         console.log(streamId);
         document.getElementById('mobile-music').setAttribute('data-video', streamId);
         document.getElementById('pc-music').setAttribute('data-video', streamId);
-        $("#songname").text(`Music Stream`);
        }
         )
     }
@@ -124,6 +123,7 @@ function onYouTubeIframeAPIReady() {
 
         a.setAttribute("id", "youtube-player-" + counter),
             document.getElementById("audio-track").appendChild(a);
+            $("#songname").text(`Music Stream`);
 
         t.setAttribute("src", "assets/icons/play.svg");
 
