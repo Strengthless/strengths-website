@@ -14,6 +14,7 @@ and "Strengthless#8282" respectively.</p>
 
 <b>v2.61</b>
 - Modified the music stream text, now shows "Loading..." until the music stream is fully loaded, then will display as "Music Stream".
+- Fixed the improper bold text in README.md file.
 
 <b>v2.6</b>
 - Modified the website icon.
@@ -24,7 +25,7 @@ and "Strengthless#8282" respectively.</p>
 - Added a new algorithm for music stream, which detects and re-connects to the new music link when the original link is down. 
 - Improved website overall performance by purging unnecessary old codes.
 
-<b>v2.52/b>
+<b>v2.52</b>
 - The music stream now sync across all site users.
 
 <b>v2.51</b>
@@ -35,7 +36,7 @@ and "Strengthless#8282" respectively.</p>
 - Removed 1 quote message from variables.
 - Removed "p0lbot.sys" file and the "lhw" folder.
 
-<b>v2.50/b>
+<b>v2.5</b>
 - Removed the music recent feed automatic update feature.
 - Removed the music stream toggling button.
 - Modified the music recent feed message. (From "Loading" to "Disabled")
@@ -46,29 +47,29 @@ and "Strengthless#8282" respectively.</p>
 <b>v2.42</b>
 - Added a script for automatic weather info update. (The script executes once per minute, but the weather API updates once per 5 or 10 minutes depending on the weather)
 
-<b>v2.41/b>
+<b>v2.41</b>
 - Modified the weather icons, now looks cleaner and more modern.
 
-<b>v2.4/b>
+<b>v2.4</b>
 - Improved the Weather API, now consistently shows current HK weather.
 
-<b>v2.31>
+<b>v2.31</b>
 - Fixed issues upon Google links redirecting.
 
-<b>v2.3/b>
+<b>v2.3</b>
 - Removed the custom-built searching feature.
 - Added Google redirection in searching bar.
 
-<b>v2.2/b>
+<b>v2.2</b>
 - Modified the greeting messages, now more accurate.
 - Added 3 more new quotes.
 - Modified the background image, dark-styled.
 
-<b>v2.1/b>
+<b>v2.1</b>
 - Added current song name for music stream.
 - Modified the apps content.
 
-<b>v2.0b>
+<b>v2.0<b>
 - Rewritten the whole HTML, the code is now cleaner, and with better indentations.
 
 <b>v1.0</b>
