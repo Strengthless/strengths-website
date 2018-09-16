@@ -14,6 +14,7 @@ and "Strengthless#8282" respectively.</p>
 
 <b>v2.62</b>
 - Cleaned up the indentation of the website code.
+- Removed some debug messages in console logs.
 
 <b>v2.61</b>
 - Fixed the improper bold text in README.md file.
