@@ -14,7 +14,7 @@ and "Strengthless#8282" respectively.</p>
 
 <b>v2.61</b>
 - Fixed the improper bold text in README.md file.
-- The music stream text now shows as "Loading..." until the music stream is fully loaded, then will display as "Music Stream".
+- The music stream text, now shows as "Loading..." until the music stream is fully loaded, then will display as "Music Stream".
 
 <b>v2.6</b>
 - Modified the website icon.
