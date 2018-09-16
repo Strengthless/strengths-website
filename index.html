@@ -1,165 +1,151 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Home page</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
-
-    <!-- Design -->
-    <link href="./assets/css/style_dark.css" rel="stylesheet">    
-
-    <!-- Audio -->
-    <div id="audio-track"></div>
-</head>
-
-<body>
-    <div class="desktop"></div>
-
-    <div class="container">
-        <div class="header">
+   <head>
+      <title>Home page</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+      <!-- Design -->
+      <link href="./assets/css/style_dark.css" rel="stylesheet">
+   </head>
+   <body>
+      <div id="audio-track"></div>
+      <div class="desktop"></div>
+      <div class="container">
+         <div class="header">
             <div class="message">
-                <h2><span id="daygreet">...</span>, <span id="name">Strengthless</span>!</h2>
-                <h4 id="quote">Loading...</h4>
+               <h2><span id="daygreet">...</span>, <span id="name">Strengthless</span>!</h2>
+               <h4 id="quote">Loading...</h4>
             </div>
-        </div>
-
-        <div class="omnibox">
+         </div>
+         <div class="omnibox">
             <div class="search">
-                <form id="search">
-                    <input placeholder="How may I help?" id="text" type="text">
-                </form>
+               <form id="search">
+                  <input placeholder="How may I help?" id="text" type="text">
+               </form>
             </div>
             <div class="results"></div>
-        </div>
-
-        <div class="cards">
+         </div>
+         <div class="cards">
             <div class="card" id="clock">
-                <div class="left">
-                    <h3 id="time">Loading...</h3>
-                    <h5 id="date"></h5>
-                </div>
+               <div class="left">
+                  <h3 id="time">Loading...</h3>
+                  <h5 id="date"></h5>
+               </div>
             </div>
             <div class="card" id="weather">
-                <div class="left">
-                    <h3><span id="details">Loading...</span></h3>
-                    <h5><span id="condition"></span></h5>
-                </div>
-                <div class="right">
-                    <img src="https://api.kurisubrooks.com/static/weather/icons_v2/unknown.png" height="52px" id="icon">
-                </div>
+               <div class="left">
+                  <h3><span id="details">Loading...</span></h3>
+                  <h5><span id="condition"></span></h5>
+               </div>
+               <div class="right">
+                  <img src="https://api.kurisubrooks.com/static/weather/icons_v2/unknown.png" height="52px" id="icon">
+               </div>
             </div>
-        </div>
-
-        <div class="mobile-status">
+         </div>
+         <div class="mobile-status">
             <div data-video="bullshit"  
-            data-autoplay="0"         
-            data-loop="1"             
-            class="music-stream"
-            id="mobile-music">
+               data-autoplay="0"         
+               data-loop="1"             
+               class="music-stream"
+               id="mobile-music">
             </div>
-        </div>
-
-        <div class="pc-status">
+         </div>
+         <div class="pc-status">
             <div data-video="bullshit" 
-            data-autoplay="0"         
-            data-loop="1"             
-            class="music-stream"
-            id="pc-music">
-        </div>
+               data-autoplay="0"         
+               data-loop="1"             
+               class="music-stream"
+               id="pc-music">
+            </div>
             <p id="songname">Loading...</p>
-        </div>
-    </div>
-
-    <div class="overlay">
-        <div class="bookmarks">
+         </div>
+      </div>
+      <div class="overlay">
+         <div class="bookmarks">
             <ul id="bookmarks"></ul>
-        </div>
-    </div>
-
-    <div class="toggle" id="show">
-        <img src="./assets/icons/apps.svg">
-    </div>
-
-    <script src="./assets/js/jquery.min.js"></script>
-    <script src="./assets/js/moment.min.js"></script>
-    <script src="./assets/js/variables.js"></script>
-    <script src="./assets/js/script.js"></script>
-    <script src="https://www.youtube.com/iframe_api"></script>
-
-    <script>
-        function getStreamId() {
-            $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC_jxnWLGJ2eQK4en3UblKEw&eventType=live&type=video&key=AIzaSyBe4z8HJEjrEgzERxSAjjh1au470kDb1D8", function(data) {
-        let streamId = data["items"][0]["id"]["videoId"];
-        console.log(streamId);
-        document.getElementById('mobile-music').setAttribute('data-video', streamId);
-        document.getElementById('pc-music').setAttribute('data-video', streamId);
-       }
-        )
-    }
-        getStreamId();
-    </script>
-    <script>
-function streamLoaded() {
-    $("#songname").text(`Music Stream`);
-}
-
-function onYouTubeIframeAPIReady() {
-    var o = function(e, t) {
-        var a = e ? "pause.svg" : "play.svg";
-
-        t.setAttribute("src", "assets/icons/" + a)
-    };
-    
-
-    var counter = 0;
-    var bigE = document.querySelectorAll(".music-stream");
-
-    bigE.forEach(function(e) {
-        var t = document.createElement("img");
-
-        t.setAttribute("id", "youtube-icon-" + counter),
-            t.style.cssText = "cursor:pointer;cursor:hand",
-            e.appendChild(t);
-
-        var a = document.createElement("div");
-
-        a.setAttribute("id", "youtube-player-" + counter),
-            document.getElementById("audio-track").appendChild(a);
-
-        t.setAttribute("src", "assets/icons/play.svg");
-
-        e.onclick = function() {
-            r.getPlayerState() === YT.PlayerState.PLAYING || r.getPlayerState() === YT.PlayerState.BUFFERING ? (r.stopVideo(),
-                o(!1, t)) : (r.playVideo(),
-                o(!0, t))
-        };
-
-        var r = new YT.Player("youtube-player-" + counter, {
-
-            height: "0",
-            width: "0",
-            videoId: e.dataset.video,
-            playerVars: {
-                autoplay: e.dataset.autoplay,
-                loop: e.dataset.loop
-            },
-            events: {
-                onReady: function(e) {
-                    r.setPlaybackQuality("small"),
-                        o(r.getPlayerState() !== YT.PlayerState.CUED, t)
-                },
-                onStateChange: function(e) {
-                    e.data === YT.PlayerState.ENDED && o(!1, t)
-                }
-            }
-        })
-        setTimeout(streamLoaded, 1500);
-        counter++;
-    });
-}
-    </script>
-</body>
-</html> 
+         </div>
+      </div>
+      <div class="toggle" id="show">
+         <img src="./assets/icons/apps.svg">
+      </div>
+      <script src="./assets/js/jquery.min.js"></script>
+      <script src="./assets/js/moment.min.js"></script>
+      <script src="./assets/js/variables.js"></script>
+      <script src="./assets/js/script.js"></script>
+      <script src="https://www.youtube.com/iframe_api"></script>
+      <script>
+         function getStreamId() {
+             $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC_jxnWLGJ2eQK4en3UblKEw&eventType=live&type=video&key=AIzaSyBe4z8HJEjrEgzERxSAjjh1au470kDb1D8", function(data) {
+         let streamId = data["items"][0]["id"]["videoId"];
+         console.log(streamId);
+         document.getElementById('mobile-music').setAttribute('data-video', streamId);
+         document.getElementById('pc-music').setAttribute('data-video', streamId);
+         }
+         )
+         }
+         getStreamId();
+      </script>
+      <script>
+         function streamLoaded() {
+             $("#songname").text(`Music Stream`);
+         }
+         
+         function onYouTubeIframeAPIReady() {
+             var o = function(e, t) {
+                 var a = e ? "pause.svg" : "play.svg";
+         
+                 t.setAttribute("src", "assets/icons/" + a)
+             };
+             
+         
+             var counter = 0;
+             var bigE = document.querySelectorAll(".music-stream");
+         
+             bigE.forEach(function(e) {
+                 var t = document.createElement("img");
+         
+                 t.setAttribute("id", "youtube-icon-" + counter),
+                     t.style.cssText = "cursor:pointer;cursor:hand",
+                     e.appendChild(t);
+         
+                 var a = document.createElement("div");
+         
+                 a.setAttribute("id", "youtube-player-" + counter),
+                     document.getElementById("audio-track").appendChild(a);
+         
+                 t.setAttribute("src", "assets/icons/play.svg");
+         
+                 e.onclick = function() {
+                     r.getPlayerState() === YT.PlayerState.PLAYING || r.getPlayerState() === YT.PlayerState.BUFFERING ? (r.stopVideo(),
+                         o(!1, t)) : (r.playVideo(),
+                         o(!0, t))
+                 };
+         
+                 var r = new YT.Player("youtube-player-" + counter, {
+         
+                     height: "0",
+                     width: "0",
+                     videoId: e.dataset.video,
+                     playerVars: {
+                         autoplay: e.dataset.autoplay,
+                         loop: e.dataset.loop
+                     },
+                     events: {
+                         onReady: function(e) {
+                             r.setPlaybackQuality("small"),
+                                 o(r.getPlayerState() !== YT.PlayerState.CUED, t)
+                         },
+                         onStateChange: function(e) {
+                             e.data === YT.PlayerState.ENDED && o(!1, t)
+                         }
+                     }
+                 })
+                 setTimeout(streamLoaded, 1500);
+                 counter++;
+             });
+         }
+             
+      </script>
+   </body>
+</html>
