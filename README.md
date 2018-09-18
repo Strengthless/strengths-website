@@ -12,6 +12,10 @@ and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b><br><br>
 
+<b>v2.63</b>
+- F‪ixed a bug regarding the music stream text, it now accurately updates once the music is fully loaded.
+- Cleaned up some codes in the music stream module.
+
 <b>v2.62</b>
 - Cleaned up the indentation of the website code.
 - Removed some debug messages in console logs.
