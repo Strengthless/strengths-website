@@ -44,19 +44,11 @@
             </div>
          </div>
          <div class="mobile-status">
-            <div data-video="bullshit"  
-               data-autoplay="0"         
-               data-loop="1"             
-               class="music-stream"
-               id="mobile-music">
+            <div class="music-stream">
             </div>
          </div>
          <div class="pc-status">
-            <div data-video="bullshit" 
-               data-autoplay="0"         
-               data-loop="1"             
-               class="music-stream"
-               id="pc-music">
+            <div class="music-stream">
             </div>
             <p id="songname">Loading...</p>
          </div>
@@ -77,20 +69,12 @@
       <script>
          function getStreamId() {
              $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC_jxnWLGJ2eQK4en3UblKEw&eventType=live&type=video&key=AIzaSyBe4z8HJEjrEgzERxSAjjh1au470kDb1D8", function(data) {
-         let streamId = data["items"][0]["id"]["videoId"];
-         // console.log(streamId);
-         document.getElementById('mobile-music').setAttribute('data-video', streamId);
-         document.getElementById('pc-music').setAttribute('data-video', streamId);
+         streamId = data["items"][0]["id"]["videoId"];
          }
          )
          }
          getStreamId();
-      </script>
-      <script>
-         function streamLoaded() {
-             $("#songname").text(`Music Stream`);
-         }
-         
+      
          function onYouTubeIframeAPIReady() {
              var o = function(e, t) {
                  var a = e ? "pause.svg" : "play.svg";
@@ -126,26 +110,25 @@
          
                      height: "0",
                      width: "0",
-                     videoId: e.dataset.video,
+                     videoId: streamId,
                      playerVars: {
-                         autoplay: e.dataset.autoplay,
-                         loop: e.dataset.loop
+                         autoplay: 0,
+                         loop: 1
                      },
                      events: {
                          onReady: function(e) {
                              r.setPlaybackQuality("small"),
-                                 o(r.getPlayerState() !== YT.PlayerState.CUED, t)
+                                 o(r.getPlayerState() !== YT.PlayerState.CUED, t);
+                                 $("#songname").text(`Music Stream`);
                          },
                          onStateChange: function(e) {
                              e.data === YT.PlayerState.ENDED && o(!1, t)
                          }
                      }
                  })
-                 setTimeout(streamLoaded, 1500);
                  counter++;
              });
          }
-             
       </script>
    </body>
 </html>
