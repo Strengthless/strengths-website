@@ -70,6 +70,8 @@
          function getStreamId() {
              $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC_jxnWLGJ2eQK4en3UblKEw&eventType=live&type=video&key=AIzaSyBe4z8HJEjrEgzERxSAjjh1au470kDb1D8", function(data) {
          streamId = data["items"][0]["id"]["videoId"];
+         document.getElementById('mobile-music').setAttribute('data-video', streamId);
+         document.getElementById('pc-music').setAttribute('data-video', streamId);
          }
          )
          }
@@ -110,7 +112,7 @@
          
                      height: "0",
                      width: "0",
-                     videoId: streamId,
+                     videoId: e.dataset.video,
                      playerVars: {
                          autoplay: 0,
                          loop: 1
