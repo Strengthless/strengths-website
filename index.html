@@ -69,12 +69,7 @@
          function getStreamId() {
              $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC_jxnWLGJ2eQK4en3UblKEw&eventType=live&type=video&key=AIzaSyBe4z8HJEjrEgzERxSAjjh1au470kDb1D8", function(data) {
          streamId = data["items"][0]["id"]["videoId"];
-         }
-         )
-         }
-         getStreamId();
-      
-         function onYouTubeIframeAPIReady() {
+         setTimeout(function onYouTubeIframeAPIReady() {
              var o = function(e, t) {
                  var a = e ? "pause.svg" : "play.svg";
          
@@ -127,7 +122,11 @@
                  })
                  counter++;
              });
+         }, 0);
          }
+         )
+         }
+         getStreamId(); 
       </script>
    </body>
 </html>
