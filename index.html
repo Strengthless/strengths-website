@@ -5,7 +5,6 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="icon" type="image/png" href="./assets/images/favicon.png">
-      <!-- Design -->
       <link href="./assets/css/style_dark.css" rel="stylesheet">
    </head>
    <body>
@@ -44,13 +43,11 @@
             </div>
          </div>
          <div class="mobile-status">
-            <div data-video="bullshit" 
-                 class="music-stream">
+            <div class="music-stream">
             </div>
          </div>
          <div class="pc-status">
-            <div data-video="bullshit" 
-                 class="music-stream">
+            <div class="music-stream">
             </div>
             <p id="songname">Loading...</p>
          </div>
@@ -72,8 +69,6 @@
          function getStreamId() {
              $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC_jxnWLGJ2eQK4en3UblKEw&eventType=live&type=video&key=AIzaSyBe4z8HJEjrEgzERxSAjjh1au470kDb1D8", function(data) {
          streamId = data["items"][0]["id"]["videoId"];
-         document.getElementById('mobile-music').setAttribute('data-video', streamId);
-         document.getElementById('pc-music').setAttribute('data-video', streamId);
          }
          )
          }
@@ -114,7 +109,7 @@
          
                      height: "0",
                      width: "0",
-                     videoId: e.dataset.video,
+                     videoId: streamId,
                      playerVars: {
                          autoplay: 0,
                          loop: 1
