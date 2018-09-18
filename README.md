@@ -13,7 +13,7 @@ and "Strengthless#8282" respectively.</p>
 <b>Changelogs:</b><br><br>
 
 <b>v2.64</b>
-- Improved the stability and consistency of the music stream, it should now load properly everytime. (Credits to @ReflxctionDev)
+- Improved the stability and consistency of the music stream, it should now load properly everytime. (Credits to @ReflxctionDev )
 
 <b>v2.63</b>
 - F‪ixed a bug  the music stream text, it now accurately updates once the music is fully loaded.
