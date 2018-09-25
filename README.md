@@ -12,6 +12,9 @@ and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b><br><br>
 
+<b>v2.65</b>
+- Patched a security problem about the YT API key, it is now only requestable through the website domain.
+
 <b>v2.64</b>
 - Improved the stability and consistency of the music stream, it should now load properly everytime.
 
