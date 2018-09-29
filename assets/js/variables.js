@@ -11,7 +11,7 @@ window.dayTimes = {
 window.quotes = [
     "You can't win if you don't participate.",
     "Try something today that you didn't do yesterday.",
-    "People only care when something is gone.",
+    "You only realize the importance of someone when they are gone.",
     "However difficult life may seem, there is always something you can do, and succeed at  \u2014 Stephen Hawking",
     "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away \u2014 A. de Saint-Exupery",
 ];
