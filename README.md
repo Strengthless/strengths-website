@@ -12,37 +12,41 @@ and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b><br><br>
 
-<b>v2.65</b>
+<b>v2.6.6</b>
+- Added a new cool galaxy theme.
+- Added a new quote variable.
+
+<b>v2.6.5</b>
 - Patched a security problem about the YT API key, it is now only requestable through the website domain.
 
-<b>v2.64</b>
+<b>v2.6.4</b>
 - Improved the stability and consistency of the music stream, it should now load properly everytime.
 
-<b>v2.63</b>
+<b>v2.6.3</b>
 - F‪ixed a bug  the music stream text, it now accurately updates once the music is fully loaded.
 - Cleaned up some codes in the music stream module.
 
-<b>v2.62</b>
+<b>v2.6.2</b>
 - Cleaned up the indentation of the website code.
 - Removed some debug messages in console logs.
 
-<b>v2.61</b>
+<b>v2.6.1</b>
 - Fixed the improper bold text in README.md file.
 - The music stream text, now shows as "Loading..." until the music stream is fully loaded, then will display as "Music Stream".
 
 <b>v2.6</b>
 - Modified the website icon.
 
-<b>v2.53</b>
+<b>v2.5.3</b>
 - Fixed the issue of music not working on mobile.
 - Improved mobile version compatibility and stability with new CSS codes.
 - Added a new algorithm for music stream, which detects and re-connects to the new music link when the original link is down. 
 - Improved website overall performance by purging unnecessary old codes.
 
-<b>v2.52</b>
+<b>v2.5.2</b>
 - The music stream now sync across all site users.
 
-<b>v2.51</b>
+<b>v2.5.1</b>
 - Revamped the music system, now uses YT music instead of shoutcast radio, due to the shutdown of Jokinami radio.
 - Due to the limitation of YT song names, the music recent feed has been changed to "Music stream" text.
 - Removed the fade transition effect of the play button due to display issues.
@@ -55,19 +59,19 @@ and "Strengthless#8282" respectively.</p>
 - Removed the music stream toggling button.
 - Modified the music recent feed message. (From "Loading" to "Disabled")
 
-<b>v2.43</b>
+<b>v2.4.3</b>
 - Improved the algorithm for choosing weather stations, now uses the weather information of the nearest available station (likely Tai Po) instead of HK official station (Chep Lap Kok).
 
-<b>v2.42</b>
+<b>v2.4.2</b>
 - Added a script for automatic weather info update. (The script executes once per minute, but the weather API updates once per 5 or 10 minutes depending on the weather)
 
-<b>v2.41</b>
+<b>v2.4.1</b>
 - Modified the weather icons, now looks cleaner and more modern.
 
 <b>v2.4</b>
 - Improved the Weather API, now consistently shows current HK weather.
 
-<b>v2.31</b>
+<b>v2.3.1</b>
 - Fixed issues upon Google links redirecting.
 
 <b>v2.3</b>
