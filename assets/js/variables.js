@@ -13,7 +13,7 @@ window.quotes = [
     "Try something today that you didn't do yesterday.",
     "You only realize the importance of someone when they are gone.",
     "However difficult life may seem, there is always something you can do, and succeed at  \u2014 Stephen Hawking",
-    "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away \u2014 A. de Saint-Exupery",
+    "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away \u2014 A. de Saint-Exupery"
 ];
 
 window.bookmarks = [

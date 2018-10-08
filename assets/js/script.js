@@ -32,12 +32,7 @@ function toggleBookmarks() {
     }
 
     $(".toggle").toggleClass("active");
-}
-
-function updateData() {
-
-  }
-  
+} 
 
 function loop() {
     var hour = moment().format("H");
@@ -99,7 +94,6 @@ $(() => {
     loop();
     setBookmarks();
     getWeather();
-    updateData();
 
     /mobile/i.test(navigator.userAgent) && setTimeout(() => { window.scrollTo(0, 1); }, 1000);
 

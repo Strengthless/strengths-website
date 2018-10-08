@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ask Me Anything</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+
+  <!-- Embed Data -->
+  <meta property="og:title" content="Ask Me Anything" />
+  <meta property="og:url" content="https://strengthless.club/ask" />
+  <meta property="og:description" content="Strengthless - Programmer &amp; Web Designer" />
+  <meta property="og:image" content="./assets/images/avatar.png" />
+  <meta property="og:image:width" content="300" />
+  <meta property="og:image:height" content="300" />
+
+  <!-- Design -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div id="background">
+    </div>
+    <div class="main">
+        <div class="brand"> <span>Ask Me Anything!</span> </div>
+        <textarea placeholder="Leave a question..." id="textarea" spellcheck="false"></textarea>
+
+       <!-- <div class="g-recaptcha" data-sitekey="6LeOFHQUAAAAAH3anKxECxUNHocnifHrKiTKFlrN" data-theme="dark"></div> -->
+        <button onclick="send()">Submit</button>
+    </div>
+
+    <script src="./assets/js/jquery.min.js"></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
+    
+    <script>
+        function send() {
+            const url = "https://discordapp.com/api/webhooks/498023008552615936/K0OW3VSfULEsOgX2lprk0H-s_3bhRETXFD9Rcf9wLGfFSV29E3JAUOiijtN_cDdfmO8e"
+            const textarea = $("textarea");
+
+            if(!textarea.val().trim()) return;
+
+            const getEmbed = (name) => {
+                return {
+                    author: {
+                        name: "Ask Me Anything!",
+                        icon_url: "https://i.imgur.com/jgg8js5.png",
+                    },
+                    color: 11854048,
+                    description: `${name.toString().trim()}\n\u200B`,
+                    timestamp: new Date(),
+                    footer: {
+                        text: "Submitted",
+                        icon_url: "http://strengthless.club/assets/images/avatar.png"
+                    }
+                }
+            };
+
+            $.post(url, JSON.stringify({ embeds: [getEmbed(textarea.val())] }));
+
+            $("button").text("Sent!");7
+            $("button").attr("disabled", "disabled");
+            $("button").addClass("disabled");
+            $("#textarea").prop('disabled', true);
+        }
+    </script>
+        
+</body>
+</html>

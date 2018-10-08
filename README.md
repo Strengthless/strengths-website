@@ -1,4 +1,4 @@
-<h2>Project eClipse v2</h2> 
+<h2>Project eClipse v3</h2> 
 This is an HTML project which I made for the customization of my browser home page.
 <br>
 <br>
@@ -12,7 +12,22 @@ and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b><br><br>
 
-<b>v2.6.6</b>
+<b>v3.2</b>
+- Added an "Ask Me Anything" page, feel free to submit your questions there.
+- Added a discord webhook for the AMA page.
+
+<b>v3.1</b>
+- The school leaks webpage has been moved to https://strengthless.club/leaks.
+- Revamped the design of the school leaks webpage.
+- Added CHEM 1A book (CHI leaks will be coming soon).
+
+<b>v3.0</b>
+- Revamped the whole website structure, assets are now individually stored.
+- Cleaned up some outdated assets.
+- The website is now on google search.
+- Added meta tags and embed information.
+
+<b>v2.7</b>
 - Added a new cool galaxy theme.
 - Added a new quote variable.
 
