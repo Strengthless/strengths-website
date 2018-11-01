@@ -18,10 +18,21 @@
 body {
 font-family: "Helvetica";
 }
-
-body .mobile {
+  
+.mobile-block {
 display: none; !important
+background-color: rgb(32, 32, 32);
 }  
+  
+#mobile-text {
+display: none;
+}
+  
+.mobile-block-text {
+display: block; !important
+text-align: center;
+color: rgb(245, 245, 245);
+}
   
 .center {
 text-align: center;
@@ -64,6 +75,8 @@ color: rgba(245, 245, 245, 0.8);
 }
 </style>
 <body>
+ <div id="mobile-text">Please use PC to view this page.</div>
+  <div id="all">
   <div class="background"></div>
   <div class="box">
     <div class="center">
@@ -80,18 +93,23 @@ color: rgba(245, 245, 245, 0.8);
 <li><b>CHEM</b> 1A Book - <a style="color:rgba(245, 245, 245, 0.7)" href="https://drive.google.com/uc?export=download&id=14K8mU1YoYi7KEulCRgkZf20PSIQdRVoH">here</a></li>
 </ul>
 </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min.js"></script>
   <script>
-    var parser = new UAParser(),
+    var all = document.getElementById("all"),
+    text = document.getElementById("mobile-text"),
+    parser = new UAParser(),
     result = parser.getResult(),
     os = result.os.name;
     
     if (os == "Android") {
-      body.classList.add("mobile");
+      all.classList.add("mobile-block");
+      text.classList.add("mobile-block-text");
       } else if (os == "iOS") {
-      body.classList.add("mobile");
+      all.classList.add("mobile-block");
+      text.classList.add("mobile-block-text");
       } else {
-      body.classList.add("pc");
+      all.classList.add("pc");
       }
     </script>
 </body>
