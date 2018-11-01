@@ -19,20 +19,18 @@ body {
 font-family: "Helvetica";
 }
   
-.mobile-block {
+.mobile-block * {
 display: none; !important
-background-color: rgb(255, 255, 255);
 }  
   
 #mobile-text {
 display: none;
 }
   
-.mobile-block-text {
+#mobile-text .mobile-block-text {
 display: initial; !important
 text-align: center;
 font-size: 5vw;
-color: rgb(0, 0, 0);
 }
   
 .center {
@@ -111,6 +109,7 @@ color: rgba(245, 245, 245, 0.8);
       text.classList.add("mobile-block-text");
       } else {
       all.classList.add("pc");
+      text.classList.add("pc");
       }
     </script>
 </body>
