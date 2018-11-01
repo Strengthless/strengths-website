@@ -19,9 +19,13 @@ body {
 font-family: "Helvetica";
 }
 
+body .mobile {
+display: none; !important
+}  
+  
 .center {
 text-align: center;
-color: rgb(245, 245, 245, 0.9);
+color: rgba(245, 245, 245, 0.9);
 }
 
 .box {
@@ -33,8 +37,8 @@ width: 36%;
 margin: -13% 0 0 -8%;
 vertical-align: middle;
 padding: 12px 0;
-border: 4px solid rgb(32, 32, 32, 0);
-background-color: rgb(32, 32, 32, 0.65);
+border: 4px solid rgba(32, 32, 32, 0);
+background-color: rgba(32, 32, 32, 0.65);
 border-radius: 15px;
 opacity: 40%;
 overflow: auto;
@@ -43,7 +47,7 @@ overflow: auto;
 ul { 
 display: table; 
 margin: 0 auto;
-color: rgb(245, 245, 245, 0.8);
+color: rgba(245, 245, 245, 0.8);
 }
 
 .background {
@@ -70,11 +74,25 @@ color: rgb(245, 245, 245, 0.8);
 </div>
 <br>
 <ul>
-<li><b>ENG</b> Anthology - <a style="color: rgb(245, 245, 245, 0.7)" href="https://drive.google.com/uc?export=download&id=1d8KgMDLzh6Lrb_9cb7VsLyV-mV83z8Sn">here</a></li>
-<li><b>ENG</b> Grammar - <a style="color: rgb(245, 245, 245, 0.7)" href="https://drive.google.com/uc?export=download&id=1IZWLYTs9jC0wfets7OHjYZAt-aXi3WoZ">here</a></li>
-<li><b>ENG</b> Listening - <a style="color:rgb(245, 245, 245, 0.7)" href="https://drive.google.com/uc?export=download&id=1TlJarytxR74sZ3gccS72D4g1SBcW9_dI">here</a></li>
-<li><b>CHEM</b> 1A Book - <a style="color:rgb(245, 245, 245, 0.7)" href="https://drive.google.com/uc?export=download&id=14K8mU1YoYi7KEulCRgkZf20PSIQdRVoH">here</a></li>
+<li><b>ENG</b> Anthology - <a style="color: rgba(245, 245, 245, 0.7)" href="https://drive.google.com/uc?export=download&id=1d8KgMDLzh6Lrb_9cb7VsLyV-mV83z8Sn">here</a></li>
+<li><b>ENG</b> Grammar - <a style="color: rgba(245, 245, 245, 0.7)" href="https://drive.google.com/uc?export=download&id=1IZWLYTs9jC0wfets7OHjYZAt-aXi3WoZ">here</a></li>
+<li><b>ENG</b> Listening - <a style="color:rgba(245, 245, 245, 0.7)" href="https://drive.google.com/uc?export=download&id=1TlJarytxR74sZ3gccS72D4g1SBcW9_dI">here</a></li>
+<li><b>CHEM</b> 1A Book - <a style="color:rgba(245, 245, 245, 0.7)" href="https://drive.google.com/uc?export=download&id=14K8mU1YoYi7KEulCRgkZf20PSIQdRVoH">here</a></li>
 </ul>
 </div>
+  <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min.js"></script>
+  <script>
+    var parser = new UAParser(),
+    result = parser.getResult(),
+    os = result.os.name;
+    
+    if (os == "Android") {
+      body.classList.add("mobile");
+      } else if (os == "iOS") {
+      body.classList.add("mobile");
+      } else {
+      body.classList.add("pc");
+      }
+    </script>
 </body>
 </html>
