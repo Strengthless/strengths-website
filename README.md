@@ -12,6 +12,9 @@ and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b><br><br>
 
+<b>v3.3</b>
+- Mobile users can no longer access the school leaks webpage, only through PC.
+
 <b>v3.2</b>
 - Added an "Ask Me Anything" page, feel free to submit your questions there.
 - Added a discord webhook for the AMA page.
