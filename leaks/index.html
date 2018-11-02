@@ -20,16 +20,19 @@ body {
 font-family: "Helvetica";
 }
   
-.mobile-block * {
-display: none; !important
+.mobile-block {
+display: none;
 }  
-  
-.mobile-text {
+ 
+.mobile-block * {
 display: none;
 }
 
 .mobile-block-text {
-display: block; !important
+display: block;
+font-size: 5vw;
+line-height: 90vh;
+text-align: center;
 }
 
 .center {
@@ -95,7 +98,7 @@ color: rgba(245, 245, 245, 0.8);
   <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min.js"></script>
   <script>
     var all = document.getElementById("all"),
-    text = document.getElementsByClassName("mobile-text"),
+    text = document.getElementsByClassName("mobile-text")[0],
     parser = new UAParser(),
     result = parser.getResult(),
     os = result.os.name;
