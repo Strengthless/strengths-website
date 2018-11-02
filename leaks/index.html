@@ -24,11 +24,11 @@ font-family: "Helvetica";
 display: none; !important
 }  
   
-#mobile-text {
+.mobile-text {
 display: none;
 }
 
-#mobile-text .mobile-block-text {
+.mobile-block-text {
 display: block; !important
 }
 
@@ -73,7 +73,7 @@ color: rgba(245, 245, 245, 0.8);
 }
 </style>
 <body>
- <div id="mobile-text">Please use PC to view this page.</div>
+ <div class="mobile-text">Please use PC to view this page.</div>
   <div id="all">
   <div class="background"></div>
   <div class="box">
@@ -95,16 +95,18 @@ color: rgba(245, 245, 245, 0.8);
   <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min.js"></script>
   <script>
     var all = document.getElementById("all"),
-    text = document.getElementById("mobile-text"),
+    text = document.getElementsByClassName("mobile-text"),
     parser = new UAParser(),
     result = parser.getResult(),
     os = result.os.name;
     
     if (os == "Android") {
       all.classList.add("mobile-block");
+      text.classList.remove("mobile-text");
       text.classList.add("mobile-block-text");
       } else if (os == "iOS") {
       all.classList.add("mobile-block");
+      text.classList.remove("mobile-text");
       text.classList.add("mobile-block-text");
       } else {
       all.classList.add("pc");
