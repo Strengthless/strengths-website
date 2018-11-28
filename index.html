@@ -88,7 +88,6 @@
          
                  t.setAttribute("src", "assets/icons/" + a)
              };
-             
          
              var counter = 0;
              var bigE = document.querySelectorAll(".music-stream");
@@ -140,6 +139,15 @@
          )
          }
          getStreamId(); 
+      </script>
+      <script>
+      setTimeout(function() {
+          $(document).ready( function() {
+          $(window).on("load", function() {
+              alert("success");
+              });
+              });
+            }, 500);
       </script>
    </body>
 </html>

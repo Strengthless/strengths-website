@@ -12,6 +12,9 @@ and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b><br><br>
 
+<b>v3.4</b>
+- Added a temporary webpage for CPU 40th Photo slideshow (Cafe).
+
 <b>v3.3</b>
 - Mobile users can no longer access the school leaks webpage, only through PC.
 
