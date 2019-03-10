@@ -90,12 +90,14 @@
             $.post(url, JSON.stringify({ embeds: [getEmbed()] }));
             // Sends the discord embed message.
 
+/*
             $.ajax({
               url: "./assets/php/signup.php",
               type: "POST",
               data: { ign: `${ign.val().toString().trim()}` , dcn: `${dcn.val().toString().trim()}`}
             });
             // Sends all the info into database.
+*/
 
             $("button").text("Sent!");
             $("button").attr("disabled", "disabled");
