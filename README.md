@@ -1,4 +1,4 @@
-<h2>Project eClipse v3</h2> 
+<h2>Project eClipse v3</h2>
 This is an HTML project which I made for the customization of my browser home page.
 <br>
 <br>
@@ -11,6 +11,10 @@ contact me via twitter or discord, which my accounts are "Strengthlesss"
 and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b><br><br>
+
+<b>v3.5</b>
+- Removed the CPU webpage as the event is finished.
+- Added a temporary webpage for signing up the Divana SMP event.
 
 <b>v3.4</b>
 - Added a temporary webpage for CPU 40th Photo slideshow (Cafe).
@@ -61,7 +65,7 @@ and "Strengthless#8282" respectively.</p>
 <b>v2.5.3</b>
 - Fixed the issue of music not working on mobile.
 - Improved mobile version compatibility and stability with new CSS codes.
-- Added a new algorithm for music stream, which detects and re-connects to the new music link when the original link is down. 
+- Added a new algorithm for music stream, which detects and re-connects to the new music link when the original link is down.
 - Improved website overall performance by purging unnecessary old codes.
 
 <b>v2.5.2</b>
