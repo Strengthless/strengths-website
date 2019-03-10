@@ -5,17 +5,17 @@
       <meta charset="UTF-8">
       <!--Embed data-->
       <meta name="author" content="Strengthless">
-      <meta name="description" content="Strengthless - Programmer &amp; Web Designer"> 
+      <meta name="description" content="Strengthless - Programmer &amp; Web Designer">
       <meta name="keywords" content="Strengthless, Strength, strength, strengthless, minecraft, dicky, websites">
 
       <meta property="og:title" content="eClipse v3" />
       <meta property="og:url" content="https://strengthless.club" />
       <meta property="og:description" content="Strengthless - Programmer &amp; Web Designer" />
-      <meta property="og:image" content="./assets/images/avatar.png" />
+      <meta property="og:image" content="https://strengthless.club/assets/images/avatar.png" />
       <meta property="og:image:width" content="300" />
       <meta property="og:image:height" content="300" />
 
-      <meta name="google-site-verification" content="LbXFuQjJcRrQjgIgX7s5tmGjO71lN1UGyTyzNMXezw8" />   
+      <meta name="google-site-verification" content="LbXFuQjJcRrQjgIgX7s5tmGjO71lN1UGyTyzNMXezw8" />
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="icon" type="image/png" href="./assets/images/favicon.png">
       <link href="./assets/css/style_dark.css" rel="stylesheet">
@@ -85,35 +85,35 @@
          setTimeout(function onYouTubeIframeAPIReady() {
              var o = function(e, t) {
                  var a = e ? "pause.svg" : "play.svg";
-         
+
                  t.setAttribute("src", "assets/icons/" + a)
              };
-         
+
              var counter = 0;
              var bigE = document.querySelectorAll(".music-stream");
-         
+
              bigE.forEach(function(e) {
                  var t = document.createElement("img");
-         
+
                  t.setAttribute("id", "youtube-icon-" + counter),
                      t.style.cssText = "cursor:pointer;cursor:hand",
                      e.appendChild(t);
-         
+
                  var a = document.createElement("div");
-         
+
                  a.setAttribute("id", "youtube-player-" + counter),
                      document.getElementById("audio-track").appendChild(a);
-         
+
                  t.setAttribute("src", "assets/icons/play.svg");
-         
+
                  e.onclick = function() {
                      r.getPlayerState() === YT.PlayerState.PLAYING || r.getPlayerState() === YT.PlayerState.BUFFERING ? (r.stopVideo(),
                          o(!1, t)) : (r.playVideo(),
                          o(!0, t))
                  };
-         
+
                  var r = new YT.Player("youtube-player-" + counter, {
-         
+
                      height: "0",
                      width: "0",
                      videoId: streamId,
@@ -138,7 +138,7 @@
          }
          )
          }
-         getStreamId(); 
+         getStreamId();
       </script>
       <script>
       setTimeout(function() {
