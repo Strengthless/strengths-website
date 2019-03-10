@@ -15,6 +15,7 @@ and "Strengthless#8282" respectively.</p>
 <b>v3.5</b>
 - Removed the CPU webpage as the event is finished.
 - Added a temporary webpage for signing up the Divana SMP event.
+- Fixed all the OG:Image meta properties, they now display properly.
 
 <b>v3.4</b>
 - Added a temporary webpage for CPU 40th Photo slideshow (Cafe).
