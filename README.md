@@ -12,6 +12,11 @@ and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b><br><br>
 
+<b>v4.0</b>
+- Added 3 webpages for the anti-extradition movement in Hong Kong. (extradition/extradition-cpu/extradition-whitehouse)
+- Removed the "Ask Me Anything" webpage
+- Removed the school leaks page as the school-term has almost finished.
+
 <b>v3.5</b>
 - Removed the CPU webpage as the event is finished.
 - Added a temporary webpage for signing up the Divana SMP event.
