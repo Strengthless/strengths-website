@@ -33,7 +33,7 @@ ul, li {
     z-index: -1;
     background: url("../images/bg_dark.jpg") no-repeat center center fixed;
     background-size: cover;
-    filter: blur(2px);
+    filter: blur(2px) brightness(0.7) saturate(0.8) opacity(0.8);
 }
 
 .container {
@@ -298,7 +298,7 @@ ul, li {
 }
 
 #songname {
-    padding-left: 20px;
+    padding-left: 22px;
     text-overflow: ellipsis;
     overflow: auto;
     white-space: nowrap;
@@ -319,7 +319,7 @@ ul, li {
     .toggle {
         bottom: 5px;
     }
-    
+
     .container {
         margin-top: 0;
     }

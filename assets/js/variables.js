@@ -9,11 +9,14 @@ window.dayTimes = {
 };
 
 window.quotes = [
-    "You can't win if you don't participate.",
-    "Try something today that you didn't do yesterday.",
-    "You only realize the importance of someone when they are gone.",
-    "However difficult life may seem, there is always something you can do, and succeed at  \u2014 Stephen Hawking",
-    "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away \u2014 A. de Saint-Exupery"
+    "It always seems impossible until it’s done.",
+    "Keep your eyes on the stars and your feet on the ground.",
+    "It’s better to be a lion for a day than a sheep all your life.",
+    "We may encounter many defeats but we must not be defeated.",
+    "Life is really simple, but we insist on making it complicated.",
+    "Your best life will not be found in comfort. It will be found in fighting for what you believe in.",
+    "Death is not the greatest loss in life. The greatest loss is what dies inside us while we live.",
+    "Care about what other people think and you will always be their prisoner."
 ];
 
 window.bookmarks = [
@@ -65,16 +68,16 @@ window.bookmarks = [
 ];
 
 window.getWeather = function() {
-    setTimeout(getWeather, 30000);
-    $.getJSON("https://api.wunderground.com/api/a75da485666047dd/conditions_v11/q/22.4545139,114.1710819.json", function(data) {
-        let temp = data.current_observation.temp_c,
-            city = data.current_observation.display_location.state_name, 
-            condition = data.current_observation.weather;
- 
-        $("#weather #details").text(`${temp}\u00B0 in Tai Po`); 
-        $("#weather #condition").text(condition); 
-        $("#weather #icon").attr("src", `https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/master/dist/icons/white/png/128x128/${data.current_observation.icon}.png`); 
- 
+    setTimeout(getWeather, 300000); // 5 Minutes
+    $.getJSON("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/5ca6c782b717e798085cc5c5b1d89985/22.45007,114.16877?exclude=minutely,hourly,daily,flags&units=si", function(data) {
+        let temp = Math.round(data.currently.apparentTemperature*10)/10,
+            city = "Hong Kong", // Because the Dark Sky API doesn't supply you with city names lol
+            condition = data.currently.summary;
+
+        $("#weather #details").text(`${temp}\u00B0 in Tai Po`);
+        $("#weather #condition").text(condition);
+        $("#weather #icon").attr("src", `./assets/icons/${data.currently.icon}.png`);
+
         return false;
     }).fail(() => console.log("An error has occurred while trying to import the weather data. Please contact Strengthless about the issue."));;
 

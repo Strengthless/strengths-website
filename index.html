@@ -8,7 +8,7 @@
       <meta name="description" content="Strengthless - Programmer &amp; Web Designer">
       <meta name="keywords" content="Strengthless, Strength, strength, strengthless, minecraft, dicky, websites">
 
-      <meta property="og:title" content="eClipse v3" />
+      <meta property="og:title" content="eClipse Club" />
       <meta property="og:url" content="https://strengthless.club" />
       <meta property="og:description" content="Strengthless - Programmer &amp; Web Designer" />
       <meta property="og:image" content="https://strengthless.club/assets/images/avatar.png" />
@@ -104,7 +104,7 @@
                  a.setAttribute("id", "youtube-player-" + counter),
                      document.getElementById("audio-track").appendChild(a);
 
-                 t.setAttribute("src", "assets/icons/play.svg");
+                 t.setAttribute("src", "assets/icons/blank.svg");
 
                  e.onclick = function() {
                      r.getPlayerState() === YT.PlayerState.PLAYING || r.getPlayerState() === YT.PlayerState.BUFFERING ? (r.stopVideo(),
@@ -125,7 +125,8 @@
                          onReady: function(e) {
                              r.setPlaybackQuality("small"),
                                  o(r.getPlayerState() !== YT.PlayerState.CUED, t);
-                                 $("#songname").text(`Music Stream`);
+                                 t.setAttribute("src", "assets/icons/play.svg");
+                                 $("#songname").text(`Music Radio`);
                          },
                          onStateChange: function(e) {
                              e.data === YT.PlayerState.ENDED && o(!1, t)
