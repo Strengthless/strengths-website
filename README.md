@@ -17,6 +17,7 @@ and "Strengthless#8282" respectively.</p>
 - Modified the website CSS, (Darkened the background image, justified the music play button)
 - Modified the quotes database, adding 9 more new quotes.
 - Modified the music text, from "Music Stream" to "Music Radio".
+- Modified the website title, from "Home page" to  "eClipse club"
 - Removed all the extradition-related webpages as they're outdated and deprecated.
 
 <b>v4.1</b>
