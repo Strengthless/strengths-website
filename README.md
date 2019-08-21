@@ -12,6 +12,10 @@ and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b><br><br>
 
+<b>v5.1</b>
+- Added a private email system, contact me via "kth@strengthless.club"!
+- Modified the bookmarks page, added "Darksky". (Huge thanks to them for providing a free weather API)
+
 <b>v5.0</b>
 - Fixed the current weather display system, as WeatherUnderground no longer provides free API access, causing the old system to be down.
 - Modified the website CSS, (Darkened the background image, justified the music play button)

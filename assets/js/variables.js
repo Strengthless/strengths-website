@@ -56,9 +56,9 @@ window.bookmarks = [
         hyperlink: "https://soundcloud.com"
     },
     {
-        title: "Sherlock",
-        icon: "./assets/bookmarks/sherlock.png",
-        hyperlink: "https://api.kurisubrooks.com/panel/login"
+        title: "Darksky",
+        icon: "./assets/bookmarks/darksky.png",
+        hyperlink: "https://darksky.net/poweredby/"
     },
     {
         title: "GitHub",
