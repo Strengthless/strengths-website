@@ -70,7 +70,7 @@ window.bookmarks = [
 window.getWeather = function() {
     setTimeout(getWeather, 300000); // 5 Minutes
     $.getJSON("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/5ca6c782b717e798085cc5c5b1d89985/22.45007,114.16877?exclude=minutely,hourly,daily,flags&units=si", function(data) {
-        let temp = Math.round(data.currently.apparentTemperature*10)/10,
+        let temp = Math.round(data.currently.temperature*10)/10,
             city = "Hong Kong", // Because the Dark Sky API doesn't supply you with city names lol
             condition = data.currently.summary;
 
