@@ -12,6 +12,9 @@ and "Strengthless#8282" respectively.</p>
 <hr>
 <b>Changelogs:</b><br><br>
 
+<b>v5.2</b>
+- Updated the "list.xls" to "list.xlsx", adding 2019-2020 student data.
+
 <b>v5.1</b>
 - Added a private email system, contact me via "kth@strengthless.club"!
 - Modified the bookmarks page, added "Darksky". (Huge thanks to them for providing a free weather API)
