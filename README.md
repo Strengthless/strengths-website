@@ -14,6 +14,7 @@ and "Strengthless#8282" respectively.</p>
 
 <b>v5.2</b>
 - Updated the "list.xls" to "list.xlsx", adding 2019-2020 student data.
+- Changed the music stream provider from MixHound to ChilledCow.
 
 <b>v5.1</b>
 - Added a private email system, contact me via "kth@strengthless.club"!

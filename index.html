@@ -80,8 +80,8 @@
       <script src="https://www.youtube.com/iframe_api"></script>
       <script>
          function getStreamId() {
-             $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC_jxnWLGJ2eQK4en3UblKEw&eventType=live&type=video&key=AIzaSyBe4z8HJEjrEgzERxSAjjh1au470kDb1D8", function(data) {
-         streamId = data["items"][0]["id"]["videoId"];
+             $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCSJ4gkVC6NrvII8umztf0Ow&eventType=live&type=video&key=AIzaSyBe4z8HJEjrEgzERxSAjjh1au470kDb1D8", function(data) {
+         streamId = data.items.filter(x => x.snippet.title === "lofi hip hop radio - beats to relax/study to")[0].id.videoId;
          setTimeout(function onYouTubeIframeAPIReady() {
              var o = function(e, t) {
                  var a = e ? "pause.svg" : "play.svg";
