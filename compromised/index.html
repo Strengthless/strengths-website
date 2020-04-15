@@ -22,14 +22,14 @@
       <script src="./assets/js/moment.min.js"></script>
     </head>
     <body>
-      <form action="javascript: getData();">
+      <form action="javascript: getData();" autocomplete="on">
         <fieldset style="width:350px">
           <legend><b>Parameters:</b></legend>
           <label for="apiKey">API key:</label><br>
-          <input name="apiKey" id="apiKey" autocomplete="on" spellcheck="false" size="36" maxlength="36" pattern="([0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-\b[0-9a-fA-F]{12})|([0-9a-fA-F]{32})"><br><br>
+          <input style="padding-left: 2px;" name="apiKey" id="apiKey" spellcheck="false" size="36" maxlength="36" placeholder="Leave it blank if you don't know..." pattern="([0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-\b[0-9a-fA-F]{12})|([0-9a-fA-F]{32})"><br><br>
           <label for="userID">Username:</label><br>
-          <input id="userID" autocomplete="off" spellcheck="false" size="16" maxlength="16" pattern="[a-zA-Z0-9_]{1,16}" required><br><br>
-          <button type="submit">Submit</button><br>
+          <input style="padding-left: 2px;"id="userID" autocomplete="off" spellcheck="false" size="16" maxlength="16" pattern="[a-zA-Z0-9_]{1,16}" required><br><br>
+          <input value="Submit" type="submit"></button><br>
         </fieldset>
       </form><br>
       <fieldset style="width:350px">
