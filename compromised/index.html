@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hypixel API</title>
+      <meta charset="UTF-8">
+      <!--Embed data-->
+      <meta name="author" content="Strengthless">
+      <meta name="description" content="Strengthless - Programmer &amp; Web Designer">
+      <meta name="keywords" content="Strengthless, Strength, strength, strengthless, minecraft, hypixel, compromised, websites">
+      <meta property="og:title" content="Hypixel Compromised Checker" />
+      <meta property="og:url" content="https://strengthless.club/compromised" />
+      <meta property="og:description" content="Created by Strengthless &#10084;" />
+      <meta property="og:image" content="https://strengthless.club/assets/images/avatar.png" />
+      <meta property="og:image:width" content="300" />
+      <meta property="og:image:height" content="300" />
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--      <link rel="icon" type="image/png" href="./assets/images/favicon.png"> -->
+<!--      <link href="./assets/css/style_dark.css" rel="stylesheet"> -->
+      <script src="./assets/js/apiData.js"></script>
+      <script src="./assets/js/jquery.min.js"></script>
+      <script src="./assets/js/moment.min.js"></script>
+    </head>
+    <body>
+      <form action="javascript: getData();">
+        <fieldset style="width:350px">
+          <legend><b>Parameters:</b></legend>
+          <label for="apiKey">API key:</label><br>
+          <input name="apiKey" id="apiKey" autocomplete="on" spellcheck="false" size="36" maxlength="36" pattern="([0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-\b[0-9a-fA-F]{12})|([0-9a-fA-F]{32})"><br><br>
+          <label for="userID">Username:</label><br>
+          <input id="userID" autocomplete="off" spellcheck="false" size="16" maxlength="16" pattern="[a-zA-Z0-9_]{1,16}" required><br><br>
+          <button type="submit">Submit</button><br>
+        </fieldset>
+      </form><br>
+      <fieldset style="width:350px">
+        <legend><b>Requested Data:</b></legend>
+        <div id="apiData"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>
+      </fieldset><br>
+      <fieldset style="width:350px">
+        <legend><b>Can you please add some designs?</b></legend>
+        How about no?<br><br>
+        It's perfect. It's lightweight. It's responsive.<br><br>
+        ⚠ Inspired by <a href="https://www.motherfuckingwebsite.com" target="_blank" style="color: #0077aa;">www.motherfuckingwebsite.com</a>.
+      </fieldset>
+      <script>
+      apiRequestLog();
+      </script>
+    </body>
+</html>
