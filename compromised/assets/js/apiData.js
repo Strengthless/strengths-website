@@ -42,7 +42,7 @@ function getData() {
       if (data.last_logout-data.last_login > 0) {playTime = moment("6969-06-09").add(data.last_logout-data.last_login, "ms").format("hh:mm:ss");} else {playTime = "N/A";};
       mostRecentGame = toTitleCase(data.last_game);
       $("#apiData").empty();
-      $("#apiData").append(`UUID: ${userUUID}<br/>Username: ${userName}<br/><br/>Version: ${mcVersion}<br/>Language: ${userLanguage}<br/>Last Login: ${lastLogin}<br/>Playtime: ${playTime}<br/>Most recent game: ${mostRecentGame}`);
+      $("#apiData").append(`<br/><b>UUID:</b> ${userUUID}<br/><b>Username:</b> ${userName}<br/><br/><b>Version:</b> ${mcVersion}<br/><b>Language:</b> ${userLanguage}<br/><b>Last Login:</b> ${lastLogin}<br/><b>Playtime:</b> ${playTime}<br/><b>Most recent game:</b> ${mostRecentGame}<br/><br/>`);
     });
   };
 }
@@ -70,4 +70,4 @@ function getData() {
       });
     });
   });
-} 
+}
