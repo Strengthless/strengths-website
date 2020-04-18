@@ -16,31 +16,31 @@
 
       <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--      <link rel="icon" type="image/png" href="./assets/images/favicon.png"> -->
-<!--      <link href="./assets/css/style_dark.css" rel="stylesheet"> -->
+      <link href="./assets/css/style.css" rel="stylesheet">
       <script src="./assets/js/apiData.js"></script>
       <script src="./assets/js/jquery.min.js"></script>
       <script src="./assets/js/moment.min.js"></script>
     </head>
     <body>
       <form action="javascript: getData();" autocomplete="on">
-        <fieldset style="width:350px">
+        <fieldset>
           <legend><b>Parameters:</b></legend>
           <label for="apiKey">API key:</label><br>
-          <input style="padding-left: 2px;" name="apiKey" id="apiKey" spellcheck="false" size="36" maxlength="36" placeholder="Leave it blank if you don't know..." pattern="([0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-\b[0-9a-fA-F]{12})|([0-9a-fA-F]{32})"><br><br>
+          <input name="apiKey" id="apiKey" spellcheck="false" size="36" maxlength="36" placeholder="Leave it blank if you don't know..." pattern="([0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-\b[0-9a-fA-F]{12})|([0-9a-fA-F]{32})"><br><br>
           <label for="userID">Username:</label><br>
-          <input style="padding-left: 2px;"id="userID" autocomplete="off" spellcheck="false" size="16" maxlength="16" pattern="[a-zA-Z0-9_]{1,16}" required><br><br>
-          <input value="Submit" type="submit"></button><br>
+          <input id="userID" autocomplete="off" spellcheck="false" size="16" maxlength="16" pattern="[a-zA-Z0-9_]{1,16}" required><br><br>
+          <button value="Submit" type="submit">Submit</button><br>
         </fieldset>
       </form><br>
-      <fieldset style="width:350px">
+      <fieldset>
         <legend><b>Requested Data:</b></legend>
         <div id="apiData"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>
       </fieldset><br>
-      <fieldset style="width:350px">
+      <fieldset>
         <legend><b>Can you please add some designs?</b></legend>
         How about no?<br><br>
         It's perfect. It's lightweight. It's responsive.<br><br>
-        ⚠ Inspired by <a href="https://www.motherfuckingwebsite.com" target="_blank" style="color: #0077aa;">www.motherfuckingwebsite.com</a>.
+        ⚠ Inspired by <a href="https://www.motherfuckingwebsite.com" target="_blank">www.motherfuckingwebsite.com</a>.
       </fieldset>
     </body>
 </html>

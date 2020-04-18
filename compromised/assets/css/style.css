@@ -1,0 +1,15 @@
+blur {
+   filter: blur(5px);
+}
+
+a {
+  color: #0077aa;
+}
+
+fieldset {
+  width: 350px;
+}
+
+input {
+  padding-left: 2px;
+}
