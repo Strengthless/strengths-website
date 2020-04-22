@@ -22,7 +22,7 @@ function getData() {
       userName = data.player.displayname;
       userUUID = data.player.uuid;
       if (data.player.mcVersionRp) {mcVersion = data.player.mcVersionRp;} else {mcVersion = "An unknown client";};
-      userLanguage = toTitleCase(data.player.userLanguage);
+      if (data.player.userLanguage) {userLanguage = toTitleCase(data.player.userLanguage);} else {userLanguage = "Unknown";};
       if (moment(data.player.lastLogin).isValid()) {lastLogin = moment(data.player.lastLogin).format("MMMM Do YYYY, hh:mm:ss Z");} else {lastLogin = "N/A";};
       if (data.player.lastLogout) {if (data.player.lastLogout - data.player.lastLogin > 0) {playTime = moment("6969-06-09").add(data.player.lastLogout - data.player.lastLogin, "ms").format("hh:mm:ss");} else {playTime = "N/A";}} else {playTime = "<blur>N/A</blur>";};
       if (data.player.mostRecentGameType) {mostRecentGame = toTitleCase(data.player.mostRecentGameType);} else {mostRecentGame = "N/A";};
@@ -35,7 +35,7 @@ function getData() {
       userName = data.username;
       userUUID = data.uuid;
       if (data.mc_version) {mcVersion = data.mc_version;} else {mcVersion = "An unknown client";};
-      userLanguage = toTitleCase(data.language);
+      if (data.language) {userLanguage = toTitleCase(data.language);} else {userLanguage = "Unknown";};
       if (moment(data.last_login).isValid()) {lastLogin = moment(data.last_login).format("MMMM Do YYYY, hh:mm:ss Z");} else {lastLogin = "<blur>N/A</blur>";};
       if (data.last_logout) {if (data.last_logout - data.last_login > 0) {playTime = moment("6969-06-09").add(data.last_logout - data.last_login, "ms").format("hh:mm:ss");} else {playTime = "N/A";}} else {playTime = "<blur>N/A</blur>";};
       if (data.last_game) {mostRecentGame = toTitleCase(data.last_game);} else {mostRecentGame = "<blur>N/A</blur>";};
@@ -86,4 +86,4 @@ function getData() {
       });
     }
   });
-} 
+}
