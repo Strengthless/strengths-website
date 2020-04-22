@@ -12,6 +12,8 @@ window.onload = function() {
   document.getElementById("apiKey").value = parameterKey;
   document.getElementById("userID").value = parameterIGN;
   // Append the api key and username.
-  document.getElementsByTagName("form")[0].submit();
-  // Submit the form.
+  if (parameterIGN) {
+    document.getElementsByTagName("form")[0].submit();
+    // Submit the form.
+  }
 }

@@ -23,26 +23,26 @@ function getData() {
       userUUID = data.player.uuid;
       if (data.player.mcVersionRp) {mcVersion = data.player.mcVersionRp;} else {mcVersion = "An unknown client";};
       if (data.player.userLanguage) {userLanguage = toTitleCase(data.player.userLanguage);} else {userLanguage = "Unknown";};
-      if (moment(data.player.lastLogin).isValid()) {lastLogin = moment(data.player.lastLogin).format("MMMM Do YYYY, hh:mm:ss Z");} else {lastLogin = "N/A";};
-      if (data.player.lastLogout) {if (data.player.lastLogout - data.player.lastLogin > 0) {playTime = moment("6969-06-09").add(data.player.lastLogout - data.player.lastLogin, "ms").format("hh:mm:ss");} else {playTime = "N/A";}} else {playTime = "<blur>N/A</blur>";};
+      if (moment(data.player.lastLogin).isValid()) {lastLogin = moment(data.player.lastLogin).format("MMMM Do YYYY, HH:mm:ss [(UTC]Z[)]");} else {lastLogin = "N/A";};
+      if (data.player.lastLogout) {if (data.player.lastLogout - data.player.lastLogin > 0) {playTime = moment("6969-06-09").add(data.player.lastLogout - data.player.lastLogin, "ms").format("HH:mm:ss");} else {playTime = "N/A";}} else {playTime = "<blur>N/A</blur>";};
       if (data.player.mostRecentGameType) {mostRecentGame = toTitleCase(data.player.mostRecentGameType);} else {mostRecentGame = "N/A";};
       $("#apiData").empty();
       $("#apiData").append(`<br/><b>UUID:</b> ${userUUID}<br/><b>Username:</b> ${userName}<br/><br/><b>Version:</b> ${mcVersion}<br/><b>Language:</b> ${userLanguage}<br/><b>Last Login:</b> ${lastLogin}<br/><b>Playtime:</b> ${playTime}<br/><b>Most recent game:</b> ${mostRecentGame}<br/><br/>`);
-      apiRequestLog();
     });
+    apiRequestLog();
   } else {
     $.getJSON('https://api.slothpixel.me/api/players/' + userID, function(data) {
       userName = data.username;
       userUUID = data.uuid;
       if (data.mc_version) {mcVersion = data.mc_version;} else {mcVersion = "An unknown client";};
       if (data.language) {userLanguage = toTitleCase(data.language);} else {userLanguage = "Unknown";};
-      if (moment(data.last_login).isValid()) {lastLogin = moment(data.last_login).format("MMMM Do YYYY, hh:mm:ss Z");} else {lastLogin = "<blur>N/A</blur>";};
-      if (data.last_logout) {if (data.last_logout - data.last_login > 0) {playTime = moment("6969-06-09").add(data.last_logout - data.last_login, "ms").format("hh:mm:ss");} else {playTime = "N/A";}} else {playTime = "<blur>N/A</blur>";};
+      if (moment(data.last_login).isValid()) {lastLogin = moment(data.last_login).format("MMMM Do YYYY, HH:mm:ss [(UTC]Z[)]");} else {lastLogin = "<blur>N/A</blur>";};
+      if (data.last_logout) {if (data.last_logout - data.last_login > 0) {playTime = moment("6969-06-09").add(data.last_logout - data.last_login, "ms").format("HH:mm:ss");} else {playTime = "N/A";}} else {playTime = "<blur>N/A</blur>";};
       if (data.last_game) {mostRecentGame = toTitleCase(data.last_game);} else {mostRecentGame = "<blur>N/A</blur>";};
       $("#apiData").empty();
       $("#apiData").append(`<br/><b>UUID:</b> ${userUUID}<br/><b>Username:</b> ${userName}<br/><br/><b>Version:</b> ${mcVersion}<br/><b>Language:</b> ${userLanguage}<br/><b>Last Login:</b> ${lastLogin}<br/><b>Playtime:</b> ${playTime}<br/><b>Most recent game:</b> ${mostRecentGame}<br/><br/>`);
-      apiRequestLog();
     });
+    apiRequestLog();
   };
 }
 
