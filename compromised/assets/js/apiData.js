@@ -18,7 +18,6 @@ function getData() {
   apiKey = document.getElementById('apiKey').value;
   userID = document.getElementById('userID').value;
   if (apiKey) {
-    apiRequestLog();
     $.getJSON('https://api.hypixel.net/player?key=' + apiKey + '&name=' + userID, function(data) {
       userName = data.player.displayname;
       userUUID = data.player.uuid;
@@ -29,9 +28,9 @@ function getData() {
       if (data.player.mostRecentGameType) {mostRecentGame = toTitleCase(data.player.mostRecentGameType);} else {mostRecentGame = "N/A";};
       $("#apiData").empty();
       $("#apiData").append(`<br/><b>UUID:</b> ${userUUID}<br/><b>Username:</b> ${userName}<br/><br/><b>Version:</b> ${mcVersion}<br/><b>Language:</b> ${userLanguage}<br/><b>Last Login:</b> ${lastLogin}<br/><b>Playtime:</b> ${playTime}<br/><b>Most recent game:</b> ${mostRecentGame}<br/><br/>`);
+      apiRequestLog();
     });
   } else {
-    apiRequestLog();
     $.getJSON('https://api.slothpixel.me/api/players/' + userID, function(data) {
       userName = data.username;
       userUUID = data.uuid;
@@ -42,11 +41,12 @@ function getData() {
       if (data.last_game) {mostRecentGame = toTitleCase(data.last_game);} else {mostRecentGame = "<blur>N/A</blur>";};
       $("#apiData").empty();
       $("#apiData").append(`<br/><b>UUID:</b> ${userUUID}<br/><b>Username:</b> ${userName}<br/><br/><b>Version:</b> ${mcVersion}<br/><b>Language:</b> ${userLanguage}<br/><b>Last Login:</b> ${lastLogin}<br/><b>Playtime:</b> ${playTime}<br/><b>Most recent game:</b> ${mostRecentGame}<br/><br/>`);
+      apiRequestLog();
     });
   };
 }
 
-function apiRequestLog() {
+ function apiRequestLog() {
   var userIp;
   const getEmbed1 = () => {
     return {
@@ -86,4 +86,4 @@ function apiRequestLog() {
       });
     }
   });
-}
+} 
