@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,400);
+@import url(https://fonts.googleapis.com/css?family=Orbitron);
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Orbitron;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 100;
+  background-color: #222;
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  height: 30vh;
+  width: ;
+}
+
+html .content, body .content {
+  text-align: center;
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -44%) scale(1.2, 1.2);
+}
+
+.title {
+  font-family: "Montserrat", Orbitron;
+  font-weight: 100;
+}
+
+html .content span, body .content span {
+  width: 50px;
+  display: inline-block;
+  text-align: center;
+  transform: scale(.85, 1);
+}
+
+.amount {
+  padding-top: 8px;
+  padding-bottom: 24px;
+}
+
+line.start {
+  position: absolute;
+  top: 0;
+  left: 0;
+  stroke: #fff;
+  stroke-width: 1px;
+  stroke-dasharray: 450;
+  stroke-dashoffset: 450;
+  animation: line 2s ease forwards;
+}
+
+input[type=number] {
+  width: 4ch;
+  max-width: 100%;
+}
+
+input[type=number]:disabled {
+  color: rgba(16, 16, 16, 0.4);
+  background-color: rgba(239, 239, 239, 0.4);
+  border-color: rgba(118, 118, 118, 0);
+}
+
+svg {
+  padding-bottom: 16px;
+}
+
+@keyframes line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
