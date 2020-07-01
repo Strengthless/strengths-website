@@ -5,7 +5,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Orbitron;
-  font-size: 24px;
+  font-size: 3.2vh;
   text-transform: uppercase;
   font-weight: 100;
   background-color: #222;
@@ -16,7 +16,7 @@ html, body {
 
 img {
   height: 30vh;
-  width: ;
+  width: auto;
 }
 
 html .content, body .content {
@@ -40,11 +40,16 @@ html .content span, body .content span {
 }
 
 .amount {
-  padding-top: 8px;
-  padding-bottom: 24px;
+  padding-top: 1.06vh;
+  padding-bottom: 3.2vh;
 }
 
-line.start {
+input[type=number] {
+  width: 4ch;
+  max-width: 100%;
+}
+
+/* line.start {
   position: absolute;
   top: 0;
   left: 0;
@@ -55,23 +60,27 @@ line.start {
   animation: line 2s ease forwards;
 }
 
-input[type=number] {
-  width: 4ch;
-  max-width: 100%;
-}
-
-input[type=number]:disabled {
-  color: rgba(16, 16, 16, 0.4);
-  background-color: rgba(239, 239, 239, 0.4);
-  border-color: rgba(118, 118, 118, 0);
-}
-
-svg {
+ svg {
   padding-bottom: 16px;
 }
 
 @keyframes line {
   to {
     stroke-dashoffset: 0;
+  }
+} */
+
+@media only screen and (max-width: 768px) {
+  html, body {
+    font-size: 3.5vw;
+  }
+
+  img {
+    height: auto;
+    width: 80vw;
+  }
+
+  html .content span, body .content span {
+    width: 9vw;
   }
 }
