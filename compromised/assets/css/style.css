@@ -13,3 +13,7 @@ fieldset {
 input {
   padding-left: 2px;
 }
+
+#warning {
+  color: FireBrick;
+}
