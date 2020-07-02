@@ -47,7 +47,7 @@ function generateNum() {
   var index;
   var change;
   var letters = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28];
-  var excludedLetters = [11, 23, 7, 18];
+  var excludedLetters = [11];
   var colors = ["green", "lightgreen"];
   // Initialize all the variables required by the algorithm.
 
@@ -60,7 +60,7 @@ function generateNum() {
   // Shuffle the array, and generate the final result of the RNG.
 
   $randomnbr.each(function() {
-    change = Math.round(Math.random() * 300) + 200;
+    change = Math.round(Math.random() * 240) + 200;
     $(this).attr('data-change', change);
   });
   // Determine the amount of shuffling that will occur for each number.
