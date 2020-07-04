@@ -27,37 +27,52 @@ function initializeRNG() {
   // When all the numbers have been appended, start shuffling the numbers.
 }
 
-function shuffle(array) {
-    var j, x, i;
-    for (i = array.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        x = array[i];
-        array[i] = array[j];
-        array[j] = x;
-    }
-    return array;
-    // Shuffles an array.
-}
-
 function generateNum() {
-  var $randomnbr = $('.nbr');
-  var $timer = 10;
-  var $it;
-  var $data = 0;
-  var index;
-  var change;
-  var letters = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28];
-  var excludedLetters = [];
-  var colors = ["green", "lightgreen"];
+  var $randomnbr = $('.nbr'),
+      $timer = 10,
+      $it,
+      $data = 0,
+      index, change,
+      letters = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28],
+      lettersToAvoid = [4, 6, 8, 9, 10, 11, 13, 14, 16, 17],
+      probabilityTable = [], finalResults = [],
+      colors = ["green", "lightgreen"];
   // Initialize all the variables required by the algorithm.
 
-  for (i = 0; i < excludedLetters.length; i++) {
-    letters.splice(letters.indexOf(excludedLetters[i]), 1);
-  }
-  // Exclude specific numbers from the RNG array.
+  for (i = 0; i < document.getElementById("amount").value; i++) {
+    // Loop for every number that will be generated.
 
-  shuffle(letters);
-  // Shuffle the array, and generate the final result of the RNG.
+    probabilityTable = [];
+    for (k = 0; k < letters.length; k++) {
+      if (lettersToAvoid.includes(letters[k])) {
+        probabilityTable.push(1/(letters.length*1.5));
+      } else {
+        probabilityTable.push((1-1/(letters.length*1.5)*lettersToAvoid.length)/(letters.length-lettersToAvoid.length));
+      }
+    }
+    // Generate a probability table, with lower chance for specific numbers.
+
+    console.log(Math.max.apply(null, probabilityTable) / Math.min.apply(null, probabilityTable));
+    // For mathematical analyzing purposes.
+
+    var randomValue = Math.random(),
+        totalWeight = 0;
+    for (j = 0; j < letters.length-1; ++j) {
+      totalWeight = totalWeight + probabilityTable[j];
+      if (randomValue < totalWeight) {
+        finalResults.push(letters[j]);
+        letters.splice(j, 1)  ;
+        probabilityTable.splice(j, 1);
+        break;
+      }
+      if (j == letters.length - 1) {
+        finalResults.push(letters[probabilityTable.length-1]);
+        letters.splice(probabilityTable.length-1, 1);
+        probabilityTable.splice(probabilityTable.length-1, 1);
+      }
+    }
+    // Generate a random number, and push it into the final result array.
+  }
 
   $randomnbr.each(function() {
     change = Math.round(Math.random() * 240) + 200;
@@ -84,7 +99,7 @@ function generateNum() {
     $randomnbr.each(function() {
       if (parseInt($(this).attr('data-number')) > parseInt($(this).attr('data-change'))) {
         index = $('.ltr').index(this);
-        $(this).html(letters[index]);
+        $(this).html(finalResults[index]);
         $(this).removeClass('nbr');
         $(this).css("color", "white");
         // Stop shuffling the numbers, and assign them the proper class, color and text.
