@@ -72,17 +72,18 @@
     padding-bottom: 3.2vh;
   }
 
-  input[type=number] {
-    width: 4ch;
-    max-width: 100%;
-  }
-
   .label {
     font-size: 2vh;
     text-transform: none;
     font-weight: 400;
     font-family: Montserrat;
   }
+
+  input[type=number] {
+    width: 4ch;
+    max-width: 100%;
+  }
+
   /* line.start {
     position: absolute;
     top: 0;
@@ -117,8 +118,11 @@
     html .content span, body .content span {
       width: 9vw;
     }
-  }
 
+    .amount {
+      transform: scale(0.86);
+    }
+  }
   </style>
 </head>
 <body>
@@ -130,7 +134,7 @@
     <div class="amount">
       <form action="javascript: initializeRNG();">
         <label for="amount" class="label" >Amount:</label>
-        <input type="number" id="amount" name="amount" min="1" max="28" value="1" width="3ch">
+        <input type="number" id="amount" name="amount" min="1" max="28" value="1">
         <button id="generateBtn" value="Submit" type="submit">Generate!</button>
       </form>
     </div>
