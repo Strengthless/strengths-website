@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>eClipse club</title>
+      <meta charset="UTF-8">
+      <!--Embed data-->
+      <meta name="author" content="Strengthless">
+      <meta name="description" content="Strengthless - Programmer &amp; Web Designer">
+      <meta name="keywords" content="Strengthless, Strength, strength, strengthless, minecraft, dicky, websites">
+      <link rel="canonical" href="https://strengthless.club/tabloid">
+
+      <meta property="og:title" content="eClipse Club" />
+      <meta property="og:url" content="https://strengthless.club" />
+      <meta property="og:description" content="Strengthless - Programmer &amp; Web Designer" />
+      <meta property="og:image" content="https://strengthless.club/assets/images/avatar.png" />
+      <meta property="og:image:width" content="300" />
+      <meta property="og:image:height" content="300" />
+
+      <meta name="google-site-verification" content="LbXFuQjJcRrQjgIgX7s5tmGjO71lN1UGyTyzNMXezw8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+      <link href="./assets/css/style_dark.css" rel="stylesheet">
+   </head>
+   <body>
+      <div id="audio-track"></div>
+      <div class="desktop"></div>
+      <div class="container">
+         <div class="header">
+            <div class="message">
+               <h2><span id="daygreet">...</span>, <span id="name">Strengthless</span>!</h2>
+               <h4 id="quote">Loading...</h4>
+            </div>
+         </div>
+         <div class="omnibox">
+            <div class="search">
+               <form id="search">
+                  <input placeholder="How may I help?" id="text" type="text">
+               </form>
+            </div>
+            <div class="results"></div>
+         </div>
+         <div class="cards">
+            <div class="card" id="clock">
+               <div class="left">
+                  <h3 id="time">Loading...</h3>
+                  <h5 id="date"></h5>
+               </div>
+            </div>
+            <div class="card" id="weather">
+               <div class="left">
+                  <h3><span id="details">Loading...</span></h3>
+                  <h5><span id="condition"></span></h5>
+               </div>
+               <div class="right">
+                  <img src="https://api.kurisubrooks.com/static/weather/icons_v2/unknown.png" height="52px" id="icon">
+               </div>
+            </div>
+         </div>
+         <div class="mobile-status">
+            <div class="music-stream">
+            </div>
+         </div>
+         <div class="pc-status">
+            <div class="music-stream">
+            </div>
+            <p id="songname">Loading...</p>
+         </div>
+      </div>
+      <div class="overlay">
+         <div class="bookmarks">
+            <ul id="bookmarks"></ul>
+         </div>
+      </div>
+      <div class="toggle" id="show">
+         <img src="./assets/icons/apps.svg">
+      </div>
+      <script src="./assets/js/jquery.min.js"></script>
+      <script src="./assets/js/moment.min.js"></script>
+      <script src="./assets/js/variables.js"></script>
+      <script src="./assets/js/script.js"></script>
+      <script src="https://www.youtube.com/iframe_api"></script>
+      <script>
+         function getStreamId() {
+             $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCSJ4gkVC6NrvII8umztf0Ow&eventType=live&type=video&key=AIzaSyBe4z8HJEjrEgzERxSAjjh1au470kDb1D8", function(data) {
+         streamId = data.items.filter(x => x.snippet.title === "lofi hip hop radio - beats to relax/study to")[0].id.videoId;
+         setTimeout(function onYouTubeIframeAPIReady() {
+             var o = function(e, t) {
+                 var a = e ? "pause.svg" : "play.svg";
+
+                 t.setAttribute("src", "assets/icons/" + a)
+             };
+
+             var counter = 0;
+             var bigE = document.querySelectorAll(".music-stream");
+
+             bigE.forEach(function(e) {
+                 var t = document.createElement("img");
+
+                 t.setAttribute("id", "youtube-icon-" + counter),
+                     t.style.cssText = "cursor:pointer;cursor:hand",
+                     e.appendChild(t);
+
+                 var a = document.createElement("div");
+
+                 a.setAttribute("id", "youtube-player-" + counter),
+                     document.getElementById("audio-track").appendChild(a);
+
+                 t.setAttribute("src", "assets/icons/blank.svg");
+
+                 e.onclick = function() {
+                     r.getPlayerState() === YT.PlayerState.PLAYING || r.getPlayerState() === YT.PlayerState.BUFFERING ? (r.stopVideo(),
+                         o(!1, t)) : (r.playVideo(),
+                         o(!0, t))
+                 };
+
+                 var r = new YT.Player("youtube-player-" + counter, {
+
+                     height: "0",
+                     width: "0",
+                     videoId: streamId,
+                     playerVars: {
+                         autoplay: 0,
+                         loop: 1
+                     },
+                     events: {
+                         onReady: function(e) {
+                             r.setPlaybackQuality("small"),
+                                 o(r.getPlayerState() !== YT.PlayerState.CUED, t);
+                                 t.setAttribute("src", "assets/icons/play.svg");
+                                 $("#songname").text(`Music Radio`);
+                         },
+                         onStateChange: function(e) {
+                             e.data === YT.PlayerState.ENDED && o(!1, t)
+                         }
+                     }
+                 })
+                 counter++;
+             });
+         }, 150);
+         }
+         )
+         }
+         getStreamId();
+      </script>
+      <script>
+      setTimeout(function() {
+          $(document).ready( function() {
+          $(window).on("load", function() {
+              console.log("success");
+              });
+              });
+            }, 500);
+      </script>
+   </body>
+</html>

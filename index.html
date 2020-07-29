@@ -1,155 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <title>eClipse club</title>
-      <meta charset="UTF-8">
-      <!--Embed data-->
-      <meta name="author" content="Strengthless">
-      <meta name="description" content="Strengthless - Programmer &amp; Web Designer">
-      <meta name="keywords" content="Strengthless, Strength, strength, strengthless, minecraft, dicky, websites">
-      <link rel="canonical" href="https://strengthless.club/">
+<!DOCTYPE HTML>
+<!--
+	Identity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Strengthless</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-      <meta property="og:title" content="eClipse Club" />
-      <meta property="og:url" content="https://strengthless.club" />
-      <meta property="og:description" content="Strengthless - Programmer &amp; Web Designer" />
-      <meta property="og:image" content="https://strengthless.club/assets/images/avatar.png" />
-      <meta property="og:image:width" content="300" />
-      <meta property="og:image:height" content="300" />
+		<meta property="og:title" content="Strengthless" />
+		<meta property="og:url" content="https://strengthless.club/intro-minimal" />
+		<meta property="og:description" content="Web Developer & Aspiring Designer" />
+		<meta property="og:image" content="https://strengthless.club/intro-minimal/assets/images/avatar.png" />
+		<meta property="og:image:width" content="300" />
+		<meta property="og:image:height" content="300" />
+		<meta name="google-site-verification" content="LbXFuQjJcRrQjgIgX7s5tmGjO71lN1UGyTyzNMXezw8" />
+		<link rel="canonical" href="https://strengthless.club/intro-minimal">
+		<link rel="icon" type="image/png" href="./assets/images/favicon.png">
 
-      <meta name="google-site-verification" content="LbXFuQjJcRrQjgIgX7s5tmGjO71lN1UGyTyzNMXezw8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="icon" type="image/png" href="./assets/images/favicon.png">
-      <link href="./assets/css/style_dark.css" rel="stylesheet">
-   </head>
-   <body>
-      <div id="audio-track"></div>
-      <div class="desktop"></div>
-      <div class="container">
-         <div class="header">
-            <div class="message">
-               <h2><span id="daygreet">...</span>, <span id="name">Strengthless</span>!</h2>
-               <h4 id="quote">Loading...</h4>
-            </div>
-         </div>
-         <div class="omnibox">
-            <div class="search">
-               <form id="search">
-                  <input placeholder="How may I help?" id="text" type="text">
-               </form>
-            </div>
-            <div class="results"></div>
-         </div>
-         <div class="cards">
-            <div class="card" id="clock">
-               <div class="left">
-                  <h3 id="time">Loading...</h3>
-                  <h5 id="date"></h5>
-               </div>
-            </div>
-            <div class="card" id="weather">
-               <div class="left">
-                  <h3><span id="details">Loading...</span></h3>
-                  <h5><span id="condition"></span></h5>
-               </div>
-               <div class="right">
-                  <img src="https://api.kurisubrooks.com/static/weather/icons_v2/unknown.png" height="52px" id="icon">
-               </div>
-            </div>
-         </div>
-         <div class="mobile-status">
-            <div class="music-stream">
-            </div>
-         </div>
-         <div class="pc-status">
-            <div class="music-stream">
-            </div>
-            <p id="songname">Loading...</p>
-         </div>
-      </div>
-      <div class="overlay">
-         <div class="bookmarks">
-            <ul id="bookmarks"></ul>
-         </div>
-      </div>
-      <div class="toggle" id="show">
-         <img src="./assets/icons/apps.svg">
-      </div>
-      <script src="./assets/js/jquery.min.js"></script>
-      <script src="./assets/js/moment.min.js"></script>
-      <script src="./assets/js/variables.js"></script>
-      <script src="./assets/js/script.js"></script>
-      <script src="https://www.youtube.com/iframe_api"></script>
-      <script>
-         function getStreamId() {
-             $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCSJ4gkVC6NrvII8umztf0Ow&eventType=live&type=video&key=AIzaSyBe4z8HJEjrEgzERxSAjjh1au470kDb1D8", function(data) {
-         streamId = data.items.filter(x => x.snippet.title === "lofi hip hop radio - beats to relax/study to")[0].id.videoId;
-         setTimeout(function onYouTubeIframeAPIReady() {
-             var o = function(e, t) {
-                 var a = e ? "pause.svg" : "play.svg";
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-                 t.setAttribute("src", "assets/icons/" + a)
-             };
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-             var counter = 0;
-             var bigE = document.querySelectorAll(".music-stream");
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<span class="avatar"><img src="./assets/images/avatar.jpg" alt="" height="125" /></span>
+							<h1>Strength</h1>
+							<p>Web Designer & Developer</p>
+						</header>
+						<!--
+						<hr />
+						<h2>Extra Stuff!</h2>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field">
+									<input type="text" name="name" id="name" placeholder="Name" />
+								</div>
+								<div class="field">
+									<input type="email" name="email" id="email" placeholder="Email" />
+								</div>
+								<div class="field">
+									<select name="department" id="department">
+										<option value="">Department</option>
+										<option value="sales">Sales</option>
+										<option value="tech">Tech Support</option>
+										<option value="null">/dev/null</option>
+									</select>
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
+								</div>
+								<div class="field">
+									<input type="checkbox" id="human" name="human" /><label for="human">I'm a human</label>
+								</div>
+								<div class="field">
+									<label>But are you a robot?</label>
+									<input type="radio" id="robot_yes" name="robot" /><label for="robot_yes">Yes</label>
+									<input type="radio" id="robot_no" name="robot" /><label for="robot_no">No</label>
+								</div>
+							</div>
+							<ul class="actions special">
+								<li><a href="#" class="button">Get Started</a></li>
+							</ul>
+						</form>
+						<hr />
+						-->
+						<footer>
+							<ul class="icons">
+								<li><a href="https://twitter.com/strengthlesss" class="icon brands fa-twitter">Twitter</a></li>
+								<li><a href="https://instagram.com/strengthlesss/" class="icon brands fa-instagram">Instagram</a></li>
+								<li><a href="https://github.com/strengthless" class="icon brands fa-github">Github</a></li>
+							</ul>
+						</footer>
+					</section>
 
-             bigE.forEach(function(e) {
-                 var t = document.createElement("img");
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Strengthless</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
 
-                 t.setAttribute("id", "youtube-icon-" + counter),
-                     t.style.cssText = "cursor:pointer;cursor:hand",
-                     e.appendChild(t);
+			</div>
 
-                 var a = document.createElement("div");
+		<!-- Scripts -->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
 
-                 a.setAttribute("id", "youtube-player-" + counter),
-                     document.getElementById("audio-track").appendChild(a);
-
-                 t.setAttribute("src", "assets/icons/blank.svg");
-
-                 e.onclick = function() {
-                     r.getPlayerState() === YT.PlayerState.PLAYING || r.getPlayerState() === YT.PlayerState.BUFFERING ? (r.stopVideo(),
-                         o(!1, t)) : (r.playVideo(),
-                         o(!0, t))
-                 };
-
-                 var r = new YT.Player("youtube-player-" + counter, {
-
-                     height: "0",
-                     width: "0",
-                     videoId: streamId,
-                     playerVars: {
-                         autoplay: 0,
-                         loop: 1
-                     },
-                     events: {
-                         onReady: function(e) {
-                             r.setPlaybackQuality("small"),
-                                 o(r.getPlayerState() !== YT.PlayerState.CUED, t);
-                                 t.setAttribute("src", "assets/icons/play.svg");
-                                 $("#songname").text(`Music Radio`);
-                         },
-                         onStateChange: function(e) {
-                             e.data === YT.PlayerState.ENDED && o(!1, t)
-                         }
-                     }
-                 })
-                 counter++;
-             });
-         }, 150);
-         }
-         )
-         }
-         getStreamId();
-      </script>
-      <script>
-      setTimeout(function() {
-          $(document).ready( function() {
-          $(window).on("load", function() {
-              console.log("success");
-              });
-              });
-            }, 500);
-      </script>
-   </body>
+	</body>
 </html>
