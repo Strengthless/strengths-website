@@ -7,14 +7,14 @@ body {
   color: #aaaaaa;
   font-size: 3vh;
   letter-spacing: 0.2ch;
-  margin: 15vh 8vw 5vh;
+  margin: 12vh 8vw 5vh;
 }
 
 #radar {
   display: absolute;
   float: right;
   width: auto;
-  height: 28vh;
+  height: 25vh;
   border-radius: 50%;
   filter: brightness(1.4) contrast(1.3) drop-shadow(4px 4px 10px #181818);
   margin: 1vh 3vw 3vh 5vw;

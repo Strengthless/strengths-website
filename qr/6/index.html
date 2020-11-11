@@ -27,7 +27,7 @@
       function swapRadarImage() {
         if (document.getElementById("radar").src.slice(-3) == "gif") {
           document.getElementById("radar").src = "../assets/images/" + currentLocation + ".png";
-          document.getElementById("radar").style.filter = "brightness(0.8) drop-shadow(4px 4px 10px #181818)";
+          document.getElementById("radar").style.filter = "grayscale(0.3) brightness(0.7) drop-shadow(4px 4px 10px #181818)";
         } else {
           document.getElementById("radar").src = "../assets/images/radar/" + currentLocation + ".gif";
           document.getElementById("radar").style.filter = "brightness(1.4) contrast(1.3) drop-shadow(4px 4px 10px #181818)";
