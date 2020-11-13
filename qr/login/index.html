@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="../assets/js/jQuery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
+    <script>
+    $(document).ready(function() {
+      var container = document.getElementById("input");
+      container.onkeyup = function(e) {
+        var target = e.srcElement || e.target;
+        var maxLength = target.maxLength;
+        var myLength = target.value.length;
+        if (myLength >= maxLength) {
+            var next = target;
+            while (next = next.nextElementSibling) {
+                if (next == null)
+                    break;
+                if (next.tagName.toLowerCase() === "input") {
+                    next.focus();
+                    break;
+                }
+            }
+        }
+        // Move to previous field if empty (user pressed backspace)
+        else if (myLength === 0) {
+            var previous = target;
+            while (previous = previous.previousElementSibling) {
+                if (previous == null)
+                    break;
+                if (previous.tagName.toLowerCase() === "input") {
+                    previous.focus();
+                    break;
+                }
+            }
+        }
+        if (document.getElementById("input").lastElementChild.value !== "") {
+          passcode = document.getElementById("input").children[0].value + document.getElementById("input").children[1].value + document.getElementById("input").children[2].value + document.getElementById("input").children[3].value;
+          if (passcode == "0423") {
+            document.getElementById("correct").attributes.removeNamedItem("hidden");
+            document.getElementById("input").children[3].blur();
+            document.getElementById("input").classList.add("shake-little", "shake-constant");
+            for (i = 0; i < document.getElementById("input").childElementCount; i++) {
+              document.getElementById("input").children[i].style.color = "rgb(84, 173, 34)";
+            }
+            setTimeout(function() {
+              document.getElementById("input").classList.remove("shake-little", "shake-constant");
+            }, 500);
+            setTimeout(function() {
+              window.location.replace("https://strengthless.club/qr/intro");
+            }, 2500);
+          } else {
+            document.getElementById("wrong").attributes.removeNamedItem("hidden");
+            document.getElementById("input").children[3].blur();
+            document.getElementById("input").classList.add("shake-hard", "shake-constant");
+            for (i = 0; i < document.getElementById("input").childElementCount; i++) {
+              document.getElementById("input").children[i].style.color = "rgb(213, 64, 59)";
+            }
+            setTimeout(function() {
+              for (i = 0; i < document.getElementById("input").childElementCount; i++) {
+                document.getElementById("input").children[i].value = "";
+                document.getElementById("input").children[i].style.color = "lightgrey";
+              }
+              // document.getElementById("input").children[0].focus();
+              document.getElementById("input").classList.remove("shake-hard", "shake-constant");
+            }, 800);
+            setTimeout(function() {
+              document.getElementById("wrong").classList.remove("fade-in");
+              document.getElementById("wrong").classList.add("fade-out");
+            }, 2000);
+            setTimeout(function() {
+              document.getElementById("wrong").attributes.setNamedItem(document.createAttribute("hidden"));
+              document.getElementById("wrong").classList.add("fade-in");
+              document.getElementById("wrong").classList.remove("fade-out");
+            }, 2998);
+          }
+        }
+      }
+    });
+    </script>
+  </head>
+  <body>
+    <div class="centre">
+      Hello 黃悦銅，係咪好驚喜呢！<br><br>
+      歡迎你嚟到我為你精心準備嘅AGM遊戲啊～<br><br>
+      為確認您的身分，<br>
+      請輸入四位數字密碼以繼續：
+    </div>
+    <div id="form">
+      <div id="input">
+        <input type="text" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+        <input type="text" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+        <input type="text" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+        <input type="text" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+      </div>
+    </div>
+    <div class="result">
+      <div id="wrong" class="centre fade-in" style="color: rgb(237, 82, 72);" hidden>密碼錯誤，請重試！</div>
+      <div id="correct" class="centre fade-in" style="color: rgb(140, 213, 89);" hidden>成功驗證身份，遊戲啟動！</div>
+    </div>
+  </body>
+</html>
