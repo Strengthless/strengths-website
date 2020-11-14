@@ -8,7 +8,7 @@
       // Get the current location ID via URL.
 
       fetch("../assets/locations.json", {mode: 'no-cors'})
-      // Retrieve data from the JSON file.
+      // Retrieve location data from the JSON file.
       .then(response => response.json())
       .then(data => {
         document.getElementById("stage").innerHTML = data.locations[currentLocation].category;
@@ -32,9 +32,10 @@
           document.getElementById("radar").src = "../assets/images/radar/" + currentLocation + ".gif";
           document.getElementById("radar").style.filter = "brightness(1.4) contrast(1.3) drop-shadow(4px 4px 10px #181818)";
         }
+        // Upon clicking, the radar's display mode is toggled.
       }
 
-      /* IP Logger */
+      /* Logger & Webhooks */
       /* $.getJSON("https://api.ipify.org?format=json", function(data) {
         var userIp = data.ip;
         const getEmbed = () => {
