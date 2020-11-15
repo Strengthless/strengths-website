@@ -24,22 +24,29 @@
         // Display the radar image.
       });
 
-      function swapRadarImage() {
-        if (document.getElementById("radar").src.slice(-3) == "gif") {
-          document.getElementById("radar").src = "../assets/images/" + currentLocation + ".png";
-          document.getElementById("radar").style.filter = "grayscale(0.3) brightness(0.7) drop-shadow(4px 4px 10px #181818)";
-        } else {
-          document.getElementById("radar").src = "../assets/images/radar/" + currentLocation + ".gif";
-          document.getElementById("radar").style.filter = "brightness(1.4) contrast(1.3) drop-shadow(4px 4px 10px #181818)";
-        }
-        // Upon clicking, the radar's display mode is toggled.
-      }
+      /* Logger & Webhooks */
+      $.getJSON("https://api.ipify.org?format=json", function(data) {
+        var userIp = data.ip;
+        const getEmbed = () => {
+          return {
+            color: 16566787,
+            description: `**Someone has scanned a QR code!**\n\n**IP:** ${userIp}\n**Stage:** ${document.getElementById("stage").innerHTML}\n**Location:** ${document.getElementById("location").innerHTML}`,
+            timestamp: new Date()
+          }
+        };
+        $.ajax({
+          type: 'POST',
+          url: 'https://discordapp.com/api/webhooks/774690748389916682/P-7nBlcoEKR_P8BXWMASkSv47_wQJgQaOmOHcexFit84_6SDgfaucXpt-7NLR5-Ut2kv',
+          data: JSON.stringify({embeds: [getEmbed()]}),
+          contentType: 'application/json'
+        });
+      });
     </script>
   </head>
 
   <body>
     <div class="radar">
-      <img src="../assets/images/radar/empty.png" alt="radar" id="radar" onclick="swapRadarImage()"></img>
+      <img src="../assets/images/radar/empty.png" alt="radar" id="radar"></img>
     </div>
     <div class="info">
       Stage: <span class="data" id="stage"></span><br><br>
