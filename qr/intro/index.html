@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="../assets/js/jQuery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script>
+      fetch("../assets/language_en.json")
+      .then(response => response.json())
+      .then(data => {
+        $(".introduction").append(data.messages.introduction);
+        explanation = data.messages.explanation;
+        remarks = data.messages.remarks;
+        $.each(explanation, function(i){
+          var li = $('<li/>')
+            .text(explanation[i])
+            .appendTo($('ul.explanation'));
+        });
+        $.each(remarks, function(i){
+          var li = $('<li/>')
+            .text(remarks[i])
+            .appendTo($('ul.remarks'));
+        });
+      });
+
+      function lastPage() {
+        if ($(".explanation").prop("hidden") == false) {
+          document.getElementsByClassName("explanation")[0].attributes.setNamedItem(document.createAttribute("hidden"));
+          document.getElementsByClassName("introduction")[0].attributes.removeNamedItem("hidden");
+          document.getElementsByClassName("prevs")[0].attributes.setNamedItem(document.createAttribute("hidden"));
+        } else if ($(".explanation").prop("hidden") == false) {
+          document.getElementsByClassName("remarks")[0].attributes.setNamedItem(document.createAttribute("hidden"));
+          document.getElementsByClassName("explanation")[0].attributes.removeNamedItem("hidden");
+        } else {
+          document.getElementsByClassName("ready")[0].attributes.setNamedItem(document.createAttribute("hidden"));
+          document.getElementsByClassName("remarks")[0].attributes.removeNamedItem("hidden");
+          document.getElementsByClassName("next")[0].attributes.removeNamedItem("hidden");
+        }
+        $(".prevs").unblur();
+      }
+
+      function nextPage() {
+        if ($(".introduction").prop("hidden") == false) {
+          document.getElementsByClassName("introduction")[0].attributes.setNamedItem(document.createAttribute("hidden"));
+          document.getElementsByClassName("explanation")[0].attributes.removeNamedItem("hidden");
+          document.getElementsByClassName("prevs")[0].attributes.removeNamedItem("hidden");
+        } else if ($(".explanation").prop("hidden") == false) {
+          document.getElementsByClassName("explanation")[0].attributes.setNamedItem(document.createAttribute("hidden"));
+          document.getElementsByClassName("remarks")[0].attributes.removeNamedItem("hidden");
+        } else {
+          document.getElementsByClassName("remarks")[0].attributes.setNamedItem(document.createAttribute("hidden"));
+          document.getElementsByClassName("ready")[0].attributes.removeNamedItem("hidden");
+          document.getElementsByClassName("next")[0].attributes.setNamedItem(document.createAttribute("hidden"));
+        }
+        $(".next").unblur();
+      }
+    </script>
+  </head>
+  <body>
+    <div class="introduction"><h2>前言</h2></div>
+    <div class="explanation" hidden><h2>遊戲介紹</h2><ul class="explanation"></ul></div>
+    <div class="remarks" hidden><h2>注意事項</h2><ul class="remarks"></ul></div>
+    <div class="ready centre" hidden><h2 class="ready-title">準備好未？</h2>準備好就可以開始啦！<a href="https://strengthless.club/qr/1" class="animated-button1" style="margin-top: 5vh;"><span></span><span></span><span></span><span></span>Start now!</a></div>
+    <br>
+    <button class="page-change prevs" onclick="lastPage()" hidden>Previous</button>
+    <button class="page-change next" onclick="nextPage()">Next</button>
+  </body>
+</html>

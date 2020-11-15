@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="../assets/js/jQuery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script>
+      currentLocation = window.location.href.split(/ /)[0].replace(/[^\d]/g, '');
+      // Get the current location ID via URL.
+
+      fetch("../assets/locations.json", {mode: 'no-cors'})
+      // Retrieve location data from the JSON file.
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("stage").innerHTML = data.locations[currentLocation].category;
+        document.getElementById("location").innerHTML = data.locations[currentLocation].name;
+        document.getElementById("description").innerHTML = data.locations[currentLocation].description;
+        document.getElementById("task").innerHTML = data.locations[currentLocation].task;
+        // Display the stage, location, description and tasks.
+        for (x in data.locations[currentLocation].hints) {
+          document.getElementById("hint" + (Number(x)+1)).innerHTML = data.locations[currentLocation].hints[x];
+        }
+        // Display the hints.
+        document.getElementById("radar").src = "../assets/images/radar/" + currentLocation + ".gif";
+        // Display the radar image.
+      });
+
+      function swapRadarImage() {
+        if (document.getElementById("radar").src.slice(-3) == "gif") {
+          document.getElementById("radar").src = "../assets/images/" + currentLocation + ".png";
+          document.getElementById("radar").style.filter = "grayscale(0.3) brightness(0.7) drop-shadow(4px 4px 10px #181818)";
+        } else {
+          document.getElementById("radar").src = "../assets/images/radar/" + currentLocation + ".gif";
+          document.getElementById("radar").style.filter = "brightness(1.4) contrast(1.3) drop-shadow(4px 4px 10px #181818)";
+        }
+        // Upon clicking, the radar's display mode is toggled.
+      }
+
+      /* Logger & Webhooks */
+      /* $.getJSON("https://api.ipify.org?format=json", function(data) {
+        var userIp = data.ip;
+        const getEmbed = () => {
+          return {
+            color: 16566787,
+            description: `**IP:** ${userIp}\n**Stage:** ${document.getElementById("stage").innerHTML}\n**Location:** ${document.getElementById("location").innerHTML}`,
+            timestamp: new Date()
+          }
+        };
+
+        $.ajax({
+          type: 'POST',
+          url: 'https://discordapp.com/api/webhooks/774690748389916682/P-7nBlcoEKR_P8BXWMASkSv47_wQJgQaOmOHcexFit84_6SDgfaucXpt-7NLR5-Ut2kv',
+          data: JSON.stringify({embeds: [getEmbed()]}),
+          contentType: 'application/json'
+        });
+      }); */
+    </script>
+  </head>
+
+  <body>
+    <div class="radar">
+      <img src="../assets/images/radar/empty.png" alt="radar" id="radar" onclick="swapRadarImage()"></img>
+    </div>
+    <div class="info">
+      Stage: <span class="data" id="stage"></span><br><br>
+      Location: <span class="data" id="location"></span><br><br>
+      Description:<br> <span class="data" id="description" disabled></span>
+    </div><br>
+    <div class="task">
+      Task:<br> <span class="data" id="task"></span>
+    </div><br>
+    <div class="hints">
+      Hints:<br>
+      <span class="data blur" id="hint1" onclick="document.getElementById('hint1').classList.remove('blur');"></span><br>
+      <span class="data blur" id="hint2" onclick="document.getElementById('hint2').classList.remove('blur');"></span>
+    </div>
+  </body>
+</html>
