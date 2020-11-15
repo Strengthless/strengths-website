@@ -27,15 +27,15 @@ body {
 input {
   margin: 14px 5px;
   text-align: center;
-  line-height: 50px;
-  font-size: 35px;
-  border: solid 0.06ch #ccc;
+  line-height: 3ch;
+  font-size: 3ch;
+  border: solid 0.08ch #aaa;
   box-shadow: 0 0 0.2ch #ccc inset;
   -webkit-box-shadow: 0 0 0.2ch #ccc inset;
   outline: none;
   width: 15%;
   transition: all .2s ease-in-out;
-  border-radius: 3px;
+  border-radius: 1vw;
   background-color: #333333;
   color: lightgrey;
 }
@@ -55,6 +55,10 @@ input {
   justify-content: center;
   cursor: pointer;
   padding-top: 5px;
+}
+
+.page-change:focus {
+  outline: 0;
 }
 
 li {

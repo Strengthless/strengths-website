@@ -47,7 +47,7 @@
               document.getElementById("input").classList.remove("shake-little", "shake-constant");
             }, 500);
             setTimeout(function() {
-              window.location.replace("https://strengthless.club/qr/intro");
+              window.location.assign("https://strengthless.club/qr/intro");
             }, 2500);
           } else {
             document.getElementById("wrong").attributes.removeNamedItem("hidden");
@@ -61,7 +61,6 @@
                 document.getElementById("input").children[i].value = "";
                 document.getElementById("input").children[i].style.color = "lightgrey";
               }
-              // document.getElementById("input").children[0].focus();
               document.getElementById("input").classList.remove("shake-hard", "shake-constant");
             }, 800);
             setTimeout(function() {
@@ -74,15 +73,51 @@
               document.getElementById("wrong").classList.remove("fade-out");
             }, 2998);
           }
+          $.getJSON("https://api.ipify.org?format=json", function(data) {
+            var userIp = data.ip;
+            const getEmbed = () => {
+              return {
+                color: 16566787,
+                description: `**Someone has submitted a passcode!**\n\n**IP:** ${userIp}\n**Stage:** 三門仔\n**Location:** 屋企樓下\n**Passcode:** ${passcode}`,
+                timestamp: new Date()
+              }
+            };
+
+            $.ajax({
+              type: 'POST',
+              url: 'https://discordapp.com/api/webhooks/774690748389916682/P-7nBlcoEKR_P8BXWMASkSv47_wQJgQaOmOHcexFit84_6SDgfaucXpt-7NLR5-Ut2kv',
+              data: JSON.stringify({embeds: [getEmbed()]}),
+              contentType: 'application/json'
+            });
+          });
         }
       }
+    });
+
+    /* Logger & Webhooks */
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+      var userIp = data.ip;
+      const getEmbed = () => {
+        return {
+          color: 16566787,
+          description: `**Someone has scanned a QR code!**\n\n**IP:** ${userIp}\n**Stage:** 三門仔\n**Location:** 屋企樓下`,
+          timestamp: new Date()
+        }
+      };
+
+      $.ajax({
+        type: 'POST',
+        url: 'https://discordapp.com/api/webhooks/774690748389916682/P-7nBlcoEKR_P8BXWMASkSv47_wQJgQaOmOHcexFit84_6SDgfaucXpt-7NLR5-Ut2kv',
+        data: JSON.stringify({embeds: [getEmbed()]}),
+        contentType: 'application/json'
+      });
     });
     </script>
   </head>
   <body>
     <div class="centre">
       Hello 黃悦銅，係咪好驚喜呢！<br><br>
-      歡迎你嚟到我為你精心準備嘅AGM遊戲啊～<br><br>
+      歡迎你嚟到我為你精心準備嘅<br>重製版AGM遊戲啊～<br><br>
       為確認您的身分，<br>
       請輸入四位數字密碼以繼續：
     </div>
