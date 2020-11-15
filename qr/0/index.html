@@ -20,8 +20,6 @@
           document.getElementById("hint" + (Number(x)+1)).innerHTML = data.locations[currentLocation].hints[x];
         }
         // Display the hints.
-        document.getElementById("radar").src = "../assets/images/radar/" + currentLocation + ".gif";
-        // Display the radar image.
       });
 
       /* Logger & Webhooks */
@@ -46,7 +44,7 @@
 
   <body>
     <div class="radar">
-      <img src="../assets/images/radar/empty.png" alt="radar" id="radar"></img>
+      <img src="../assets/images/radar/0.png" alt="radar" id="radar"></img>
     </div>
     <div class="info">
       Stage: <span class="data" id="stage"></span><br><br>
