@@ -42,11 +42,11 @@ input {
 
 .page-change {
   background: #222;
-  height: 40px;
-  min-width: 120px;
+  height: 4.2ch;
+  min-width: 12ch;
   border: none;
   border-radius: 10px;
-  color: #cccccc;
+  color: #bbbbbb;
   font-size: 18px;
   position: relative;
   transition: 1s;
@@ -54,7 +54,8 @@ input {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  padding-top: 5px;
+  padding-top: 0.55ch;
+  margin-bottom: 4ch;
 }
 
 .page-change:focus {
