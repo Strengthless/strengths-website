@@ -1,5 +1,7 @@
 <h2>Clarification regarding IP logs</h2>
 Yes. There are IP loggers on certain parts of my website.
+<br><br>
+
 
 However, IP logging is **only** implemented when the webpage is for, 
 - Internal usage, and
@@ -10,7 +12,7 @@ As of the time of writing, IP logging has only been implemented twice.
 - The `qr` branch, as it was a `QR code hunt` game which was designed for an event, and game progress of each player had to be tracked. The event has now ended, and the IP logger has not received any data since 16/11/2020.
 
 
-All information are stored in a secure database, where only I have access to. 
+All information are stored in a secure database, where **only** I have access to. 
 
 Your data will **not** be accessed by others, nor any third parties.
 
