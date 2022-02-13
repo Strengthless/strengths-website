@@ -263,10 +263,23 @@ legend {
         /* width: 90%; */
         /* height: 40%; */
         /* background: rgba(20, 20, 20, 0.5); */
-        height: 660px;
+        height: 550px;
         width: 85%;
-        background: rgba(16, 16, 16, 0.95);
+        background: rgba(16, 16, 16, 0.9);
         /* width: 620px; */
+    }
+
+    /*h2 {
+        font-size: 1.3em;
+    }*/
+
+    body {
+        font-size: 80%;
+    }
+
+    input.charsets {
+        width: 75%;
+        font-size: 16px;
     }
     
     .image {

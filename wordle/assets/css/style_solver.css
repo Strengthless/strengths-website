@@ -204,10 +204,18 @@ button {
         /* width: 90%; */
         /* height: 40%; */
         /* background: rgba(20, 20, 20, 0.5); */
-        height: 660px;
-        width: 85%;
-        background: rgba(16, 16, 16, 0.95);
+        height: 530px;
+        width: 94%;
+        background: rgba(16, 16, 16, 0.9);
         /* width: 620px; */
+    }
+
+    body {
+        font-size: 70%
+    }
+
+    .section span {
+        font-size: 12px;
     }
     
     .image {
