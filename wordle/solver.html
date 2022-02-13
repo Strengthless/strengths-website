@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>WORDLE Solver</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="icon" href="./assets/images/favicon.png">
+
+	<meta name="author" content="jorddn" />
+	<meta name="description" content="jorddn - Programmer &amp; Aspiring Designer" />
+	<meta name="keywords" content="jorddn, Jordan, jordqn, minecraft, nodejs, website" />
+	<meta name="robots" content="noodp,noydir" />
+	<meta name="theme-color" content="#2f3136" />
+	<meta property="og:title" content="Jordan">
+	<meta property="og:url" content="https://jordqn.me">
+	<meta property="og:description" content="jorddn - Programmer &amp; Aspiring Designer">
+	<meta property="og:image" content="https://jordqn.me/i/avatar.png">
+	<meta property="og:image:width" content="300">
+	<meta property="og:image:height" content="300">
+
+	<link href="./assets/css/style_solver.css" rel="stylesheet">
+    <script src="./assets/js/input.js"></script>
+	<script src="./assets/js/solver.js"></script>
+</head>
+
+<body>
+	<div class="image"></div>
+	<div class="center">
+		<div class="container">
+			<div class="header">
+				<div class="controls">
+					<svg width="12" height="12" viewBox="0 0 12 12">
+						<circle cx="6" cy="6" r="6" fill="#489684" />
+						<path stroke="var(--color, #205c4f)" fill="none"
+							d="M8.5,3.5 L6,6 L3.5,3.5 L6,6 L3.5,8.5 L6,6 L8.5,8.5 L6,6 L8.5,3.5 Z" />
+					</svg>
+					<svg aria-hidden="false" width="12" height="12" viewBox="0 0 12 12">
+						<circle cx="6" cy="6" r="6" fill="#79FFE1" />
+						<rect fill="var(--color, #489684)" width="8" height="2" x="2" y="5" fill-rule="evenodd" />
+					</svg>
+					<svg width="12" height="12" viewBox="0 0 12 12">
+						<circle cx="6" cy="6" r="6" fill="#EEEEEE" />
+						<g fill="var(--color, #777777)">
+							<path
+								d="M5,3 C5,3 5,6.1325704 5,6.48601043 C5,6.83945045 5.18485201,7 5.49021559,7 L9,7 L9,6 L8,6 L8,5 L7,5 L7,4 L6,4 L6,3 L5,3 Z"
+								transform="rotate(180 7 5)" />
+							<path
+								d="M3,5 C3,5 3,8.1325704 3,8.48601043 C3,8.83945045 3.18485201,9 3.49021559,9 L7,9 L7,8 L6,8 L6,7 L5,7 L5,6 L4,6 L4,5 L3,5 Z" />
+						</g>
+					</svg>
+				</div>
+			</div>
+			<div class="section">
+				<h2>Optimized Solver for WORDLE</h2> 
+                <span>This tool is capable of providing you the optimal game path. </span>
+                <span>You will find the solution, on average, in 3.51 guesses. </span>
+                <span>In the worst case scenario, the solution is found in 5 guesses. </span><br>
+                <span>1. Enter "raise" as your first guess.</span>
+                <span>2. Input the results here, 0=none, 1=wrong location, 2=correct.</span>
+                <span>3. Enter the generated word, as your next guess.</span>
+                <span>4. Repeat steps 2-3, until you win!</span>
+                <fieldset class='number-code'>
+                    <legend>Input your results of "raise"</legend>
+                    <div>
+                      <input name='code' class='code-input' required/>
+                      <input name='code' class='code-input' required/>
+                      <input name='code' class='code-input' required/>
+                      <input name='code' class='code-input' required/>
+                      <input name='code' class='code-input' required/>
+                    </div>
+                </fieldset>
+                <button onclick="submitSolverResult()">SUBMIT</button>
+                <span>Special thanks to <a href="https://github.com/afontenot" class="name">@afontenot</a> for his amazing algorithm!</span>
+                <span>Go check out <a href="https://adamfontenot.com/post/how_i_defeated_wordle_with_python">his article</a> if you're interested in the science behind.</span><br>
+                <span>You may visit <a href="https://www.wordleunlimited.com/" target="_blank">wordleunlimited.com</a> if you wanna test out this tool.</span>
+			</div>
+
+		</div>
+	</div>
+</body>

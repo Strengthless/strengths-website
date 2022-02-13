@@ -1,0 +1,157 @@
+body,
+html {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    overflow: hidden;
+    background: linear-gradient(45deg,
+            hsl(167deg 100% 74%) 0%,
+            hsl(216deg 36% 32%) 39%,
+            hsl(274deg 26% 23%) 61%,
+            hsl(345deg 71% 47%) 100%);
+}
+
+.image {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    transform: scale(1.1);
+    background: url(../images/bg2.jpg) no-repeat fixed center center;
+    background-size: cover;
+    filter: blur(2px) contrast(0.75);
+}
+
+.center {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 15px;
+    background: #121212;
+    height: 20px;
+    border-bottom: 2px solid #151515;
+}
+
+.header .controls {
+    display: flex;
+    width: 48px;
+    gap: 5px;
+    --color: transparent;
+}
+
+.header .controls:hover {
+    --color: unset;
+}
+
+.header .controls svg:active {
+    filter: brightness(115%);
+}
+
+.header .controls svg:active path,
+.header .controls svg:active rect {
+    filter: brightness(80%);
+}
+
+a,
+a:link,
+a:visited {
+    color: #489684;
+    transition: all ease-in-out 0.1s;
+    /* text-decoration: none; */
+}
+
+a:hover,
+a:active {
+    color: #79ffe1;
+    text-decoration: underline;
+}
+
+svg {
+    width: 54px;
+}
+
+img,
+br {
+    user-select: none;
+}
+
+.name {
+    text-decoration: none;
+}
+
+.name:hover,
+a:active {
+    text-decoration: underline;
+}
+
+.container {
+    z-index: 5;
+    background-color: rgba(16, 16, 16, 0.95);
+    color: #eee;
+    height: 400px;
+    width: 620px;
+    box-shadow: 0 5px 17px rgba(0, 0, 0, 0.2), 0 2px 7px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+}
+
+.credits {
+    margin-top: 4ch;
+    color: rgb(109, 109, 109);
+    font-style: italic;
+    /* flex-grow: 1; */
+}
+
+.section h1 {
+    margin-top: 0px;
+    /* flex-grow: 0.8; */
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: Calc(100% - 100px);
+    justify-content: center;
+}
+
+span {
+    margin-bottom: 0.4ch;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        /* width: 90%; */
+        /* height: 40%; */
+        /* background: rgba(20, 20, 20, 0.5); */
+        height: 300px;
+        width: 85%;
+        background: rgba(16, 16, 16, 0.95);
+        /* width: 620px; */
+    }
+    
+    .image {
+        background: url(../images/bg5.jpg) no-repeat fixed left center;
+        background-size: cover;
+        transform: scale(1.1);
+        position: fixed;
+    }
+
+}
