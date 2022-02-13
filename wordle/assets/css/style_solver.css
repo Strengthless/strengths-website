@@ -47,16 +47,16 @@ html {
     --color: transparent;
 }
 
-.header .controls:hover {
+.header .controls {
     --color: unset;
 }
 
-.header .controls svg:active {
+.header .controls svg {
     filter: brightness(115%);
 }
 
-.header .controls svg:active path,
-.header .controls svg:active rect {
+.header .controls svg path,
+.header .controls svg rect {
     filter: brightness(80%);
 }
 
