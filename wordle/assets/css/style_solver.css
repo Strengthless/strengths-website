@@ -205,7 +205,7 @@ button {
         /* height: 40%; */
         /* background: rgba(20, 20, 20, 0.5); */
         height: 530px;
-        width: 94%;
+        width: 96%;
         background: rgba(16, 16, 16, 0.9);
         /* width: 620px; */
     }
@@ -215,7 +215,7 @@ button {
     }
 
     .section span {
-        font-size: 12px;
+        font-size: 11px;
     }
     
     .image {
