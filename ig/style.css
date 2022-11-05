@@ -3,6 +3,8 @@
 	background: #947cb0;
 }
 body {
+	/* touch-action: none;
+	-ms-touch-action: none; */
 	align-items: center;
 	display: flex;
 	justify-content: center;
