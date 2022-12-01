@@ -169,7 +169,7 @@ const App = () => {
 			React.createElement(
 				'div',
 				{ ref: swearRef, className: 'bear__swear' },
-				'Stop stalking my Instagram...!'
+				'Too young, too simple, sometimes naive...'
 			) /*#__PURE__*/,
 
 			React.createElement(
